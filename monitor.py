@@ -21,6 +21,15 @@ SNAPSHOT_FILE = "last_seen_orders.json"
 def get_session():
     """Log in and return an authenticated session."""
     session = requests.Session()
+
+    # Fix for 417 error: disable the Expect: 100-continue header that some
+    # servers reject, and set a browser-like User-Agent
+    session.headers.update({
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Expect": "",          # disable Expect: 100-continue
+        "X-Frappe-CSRF-Token": "fetch",
+    })
+
     resp = session.post(
         f"{PORTAL_URL}/api/method/login",
         data={"usr": PORTAL_USER, "pwd": PORTAL_PASS},
@@ -30,40 +39,66 @@ def get_session():
     result = resp.json()
     if result.get("message") != "Logged In":
         raise Exception(f"Login failed: {result}")
+
+    # Grab the CSRF token that Frappe sets after login (needed for API calls)
+    csrf_token = session.cookies.get("csrf_token") or result.get("home_page", "")
+    if csrf_token:
+        session.headers.update({"X-Frappe-CSRF-Token": csrf_token})
+
     print("✅ Logged in successfully")
     return session
 
 # ── Fetch Orders via Frappe REST API ─────────────────────────────────────────
 def fetch_orders(session):
     """
-    Fetch PCSO (Purchase / Supply Orders) from the Frappe API.
-    Frappe's list API: /api/resource/<DocType>
-    Adjust fields and filters below based on what your portal shows.
+    Fetch PCSO orders from the Frappe API.
+    We first try the minimal fields (just name + modified) to confirm the
+    DocType exists, then fetch full details.
     """
-    params = {
-        "fields": '["name","status","supplier","grand_total","transaction_date","modified"]',
+    # Try these DocType names in order until one works
+    candidate_doctypes = [
+        "PCSO",
+        "Purchase Order",
+        "Jute Order",
+        "PCSO Order",
+        "Sales Order",
+        "Supplier Order",
+    ]
+
+    # Minimal params first — avoids field-name mismatches on first probe
+    probe_params = {
+        "fields": '["name","modified"]',
+        "limit_page_length": 5,
+    }
+
+    working_doctype = None
+    for doctype in candidate_doctypes:
+        url = f"{PORTAL_URL}/api/resource/{requests.utils.quote(doctype)}"
+        resp = session.get(url, params=probe_params, timeout=30)
+        print(f"   Trying DocType '{doctype}' → HTTP {resp.status_code}")
+        if resp.status_code == 200:
+            working_doctype = doctype
+            print(f"✅ DocType confirmed: '{doctype}'")
+            break
+
+    if not working_doctype:
+        # Print the last response body to help diagnose
+        print(f"❌ Could not find a working DocType. Last response: {resp.text[:500]}")
+        raise Exception("No valid DocType found. Check portal access and DocType name.")
+
+    # Now fetch with full fields
+    full_params = {
+        "fields": '["name","status","modified","creation"]',
         "order_by": "modified desc",
         "limit_page_length": 50,
-        # Uncomment and adjust if you only want specific statuses:
-        # "filters": '[["status","in",["To Receive and Bill","To Bill","Submitted"]]]',
     }
-    resp = session.get(
-        f"{PORTAL_URL}/api/resource/PCSO",
-        params=params,
-        timeout=30,
-    )
+    url = f"{PORTAL_URL}/api/resource/{requests.utils.quote(working_doctype)}"
+    resp = session.get(url, params=full_params, timeout=30)
 
-    # If 'PCSO' isn't the exact DocType name, try these fallbacks:
-    if resp.status_code == 404:
-        for doctype in ["Purchase Order", "Sales Order", "Jute Order", "PCSO Order"]:
-            resp = session.get(
-                f"{PORTAL_URL}/api/resource/{doctype.replace(' ', '%20')}",
-                params=params,
-                timeout=30,
-            )
-            if resp.status_code == 200:
-                print(f"ℹ️  Found orders under DocType: '{doctype}'")
-                break
+    if resp.status_code != 200:
+        # Fall back to minimal fields if the server rejects some field names
+        print(f"⚠️  Full fields failed ({resp.status_code}), falling back to minimal fields")
+        resp = session.get(url, params=probe_params, timeout=30)
 
     resp.raise_for_status()
     orders = resp.json().get("data", [])
@@ -78,19 +113,21 @@ def load_snapshot():
     return {}
 
 def save_snapshot(orders):
-    snapshot = {o["name"]: o.get("modified", "") for o in orders}
+    # Store name → modified timestamp for change detection
+    snapshot = {o["name"]: o.get("modified", o.get("creation", "")) for o in orders}
     with open(SNAPSHOT_FILE, "w") as f:
         json.dump(snapshot, f, indent=2)
 
 def find_new_orders(orders, snapshot):
-    """Returns list of orders that are new or have changed status since last run."""
+    """Returns list of orders that are new or have changed since last run."""
     new_or_changed = []
     for order in orders:
         name = order["name"]
+        current_ts = order.get("modified", order.get("creation", ""))
         if name not in snapshot:
             order["_change_type"] = "NEW"
             new_or_changed.append(order)
-        elif order.get("modified", "") != snapshot[name]:
+        elif current_ts != snapshot[name]:
             order["_change_type"] = "UPDATED"
             new_or_changed.append(order)
     return new_or_changed
@@ -103,6 +140,9 @@ def send_email(new_orders):
     rows = ""
     for o in new_orders:
         badge_color = "#2ecc71" if o["_change_type"] == "NEW" else "#f39c12"
+        # Safely format amount — field may not exist depending on API response
+        amount = o.get("grand_total") or o.get("total") or o.get("amount")
+        amount_str = f"₹{float(amount):,.2f}" if amount is not None else "—"
         rows += f"""
         <tr>
             <td style="padding:8px;border-bottom:1px solid #eee;">
@@ -116,10 +156,8 @@ def send_email(new_orders):
             </td>
             <td style="padding:8px;border-bottom:1px solid #eee;">{o.get('status','—')}</td>
             <td style="padding:8px;border-bottom:1px solid #eee;">{o.get('supplier','—')}</td>
-            <td style="padding:8px;border-bottom:1px solid #eee;">
-                ₹{float(o.get('grand_total',0)):,.2f}
-            </td>
-            <td style="padding:8px;border-bottom:1px solid #eee;">{o.get('transaction_date','—')}</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;">{amount_str}</td>
+            <td style="padding:8px;border-bottom:1px solid #eee;">{o.get('transaction_date', o.get('creation','—'))}</td>
         </tr>"""
 
     html = f"""
