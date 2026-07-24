@@ -13,9 +13,9 @@ jobs:
   monitor:
     runs-on: ubuntu-latest
 
-    # Give the job write access so it can commit the updated snapshot
     permissions:
       contents: write
+      actions: write
 
     steps:
       - name: Checkout repository
@@ -46,10 +46,8 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: update order snapshot [skip ci]"
           git push
 
-  keepalive:
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: gautamkrishnar/keepalive-workflow@v1
+      - name: Keep workflow alive
+        run: |
+          gh run list --workflow=monitor.yml --limit=1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
