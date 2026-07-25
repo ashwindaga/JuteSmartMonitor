@@ -190,7 +190,7 @@ def build_mill_section(mill, new_orders):
 
 def send_email(mills_with_orders):
     total = sum(len(orders) for _, orders in mills_with_orders)
-    mill_names = ", ".join(m for m, _ in mills_with_orders)
+    mill_names = ", ".join(m["name"] for m, _ in mills_with_orders)
     subject = (
         f"JuteSmart Alert: {total} New/Updated Order(s) "
         f"[{mill_names}] — {datetime.now().strftime('%d %b %Y')}"
