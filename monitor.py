@@ -115,6 +115,22 @@ def fetch_orders(session):
         for key, value in orders[0].items():
             print(f"   {key}: {value}")
         print("--- END DEBUG ---\n")
+
+    # ── DEBUG: Fetch all available fields for this DocType from Frappe metadata
+    print("\n--- DEBUG: All fields defined on PCSO DocType ---")
+    meta_resp = session.get(
+        f"{PORTAL_URL}/api/method/frappe.client.get",
+        params={"doctype": "DocType", "name": working_doctype},
+        timeout=30,
+    )
+    if meta_resp.status_code == 200:
+        fields = meta_resp.json().get("message", {}).get("fields", [])
+        for f in fields:
+            print(f"   fieldname={f.get('fieldname')}  label={f.get('label')}  type={f.get('fieldtype')}")
+    else:
+        print(f"   Could not fetch metadata: HTTP {meta_resp.status_code}")
+        print(f"   Response: {meta_resp.text[:300]}")
+    print("--- END DEBUG ---\n")
     # ─────────────────────────────────────────────────────────────────────────
 
     return orders
