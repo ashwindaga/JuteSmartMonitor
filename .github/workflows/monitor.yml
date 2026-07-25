@@ -2,11 +2,10 @@ name: JuteSmart Order Monitor
 
 on:
   schedule:
-    # Runs every 15 minutes (GitHub's minimum interval)
-    # Note: GitHub may delay by up to 5 min under high load
-    - cron: '*/15 * * * *'
+    # Every 15 min, 9am-9pm IST (Mon-Sat)
+    # IST = UTC+5:30, so 9am IST = 03:30 UTC, 9pm IST = 15:30 UTC
+    - cron: '*/15 3-15 * * 1-6'
 
-  # Allows you to trigger a run manually from the GitHub Actions tab
   workflow_dispatch:
 
 jobs:
@@ -31,11 +30,17 @@ jobs:
 
       - name: Run monitor script
         env:
-          JUTECOMM_USERNAME:   ${{ secrets.JUTECOMM_USERNAME }}
-          JUTECOMM_PASSWORD:   ${{ secrets.JUTECOMM_PASSWORD }}
-          GMAIL_SENDER:        ${{ secrets.GMAIL_SENDER }}
-          GMAIL_APP_PASSWORD:  ${{ secrets.GMAIL_APP_PASSWORD }}
-          ALERT_EMAIL:         ${{ secrets.ALERT_EMAIL }}
+          JUTECOMM_USERNAME_1:  ${{ secrets.JUTECOMM_USERNAME_1 }}
+          JUTECOMM_PASSWORD_1:  ${{ secrets.JUTECOMM_PASSWORD_1 }}
+          JUTECOMM_USERNAME_2:  ${{ secrets.JUTECOMM_USERNAME_2 }}
+          JUTECOMM_PASSWORD_2:  ${{ secrets.JUTECOMM_PASSWORD_2 }}
+          JUTECOMM_USERNAME_3:  ${{ secrets.JUTECOMM_USERNAME_3 }}
+          JUTECOMM_PASSWORD_3:  ${{ secrets.JUTECOMM_PASSWORD_3 }}
+          JUTECOMM_USERNAME_4:  ${{ secrets.JUTECOMM_USERNAME_4 }}
+          JUTECOMM_PASSWORD_4:  ${{ secrets.JUTECOMM_PASSWORD_4 }}
+          GMAIL_SENDER:         ${{ secrets.GMAIL_SENDER }}
+          GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
+          ALERT_EMAIL:          ${{ secrets.ALERT_EMAIL }}
         run: python monitor.py
 
       - name: Save updated snapshot back to repo
@@ -47,7 +52,6 @@ jobs:
           git push
 
       - name: Keep workflow alive
-        run: |
-          gh run list --workflow=monitor.yml --limit=1
+        run: gh run list --workflow=monitor.yml --limit=1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
