@@ -13,7 +13,10 @@ PORTAL_PASS   = os.environ["JUTECOMM_PASSWORD"]
 
 GMAIL_SENDER  = os.environ["GMAIL_SENDER"]       # your Gmail address
 GMAIL_PASS    = os.environ["GMAIL_APP_PASSWORD"]  # Gmail App Password (not your login password)
-ALERT_EMAIL   = os.environ["ALERT_EMAIL"]         # where to send alerts (can be same as sender)
+
+# ALERT_EMAIL supports multiple addresses separated by commas
+# e.g. "alice@gmail.com, bob@company.com, carol@gmail.com"
+ALERT_EMAILS  = [e.strip() for e in os.environ["ALERT_EMAIL"].split(",") if e.strip()]
 
 SNAPSHOT_FILE = "last_seen_orders.json"
 
@@ -103,6 +106,19 @@ def fetch_orders(session):
     resp.raise_for_status()
     orders = resp.json().get("data", [])
     print(f"📋 Fetched {len(orders)} orders from portal")
+
+    # ── DEBUG: print raw fields from the first order ──────────────────────────
+    # This helps us see exactly what field names the API returns.
+    # Safe to remove after we've confirmed the field names.
+    if orders:
+        print("
+🔍 DEBUG — Fields available in first order:")
+        for key, value in orders[0].items():
+            print(f"   {key}: {value}")
+        print("🔍 END DEBUG
+")
+    # ─────────────────────────────────────────────────────────────────────────
+
     return orders
 
 # ── Compare with Snapshot ────────────────────────────────────────────────────
@@ -196,14 +212,15 @@ def send_email(new_orders):
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"]    = GMAIL_SENDER
-    msg["To"]      = ALERT_EMAIL
+    msg["To"]      = ", ".join(ALERT_EMAILS)   # shows all recipients in the To: header
     msg.attach(MIMEText(html, "html"))
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
         smtp.login(GMAIL_SENDER, GMAIL_PASS)
-        smtp.sendmail(GMAIL_SENDER, ALERT_EMAIL, msg.as_string())
+        # sendmail() accepts a list — delivers to every address individually
+        smtp.sendmail(GMAIL_SENDER, ALERT_EMAILS, msg.as_string())
 
-    print(f"📧 Alert email sent to {ALERT_EMAIL}")
+    print(f"📧 Alert email sent to {len(ALERT_EMAILS)} recipient(s): {', '.join(ALERT_EMAILS)}")
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 def main():
