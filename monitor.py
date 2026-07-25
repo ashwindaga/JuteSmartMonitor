@@ -111,12 +111,10 @@ def fetch_orders(session):
     # This helps us see exactly what field names the API returns.
     # Safe to remove after we've confirmed the field names.
     if orders:
-        print("
-🔍 DEBUG — Fields available in first order:")
+        print("\n--- DEBUG: Fields in first order ---")
         for key, value in orders[0].items():
             print(f"   {key}: {value}")
-        print("🔍 END DEBUG
-")
+        print("--- END DEBUG ---\n")
     # ─────────────────────────────────────────────────────────────────────────
 
     return orders
