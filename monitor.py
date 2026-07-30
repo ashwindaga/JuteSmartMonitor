@@ -22,46 +22,64 @@ ALERT_EMAILS = [e.strip() for e in os.environ["ALERT_EMAIL"].split(",") if e.str
 
 SNAPSHOT_FILE = "last_seen_orders.json"
 
-# All 13 fields to fetch, track and display
-TRACKED_FIELDS = [
-    "name",
-    "status",
-    "pcso_date",
-    "total_qty",
-    "indentor",
-    "agency",
-    "indentor_code",
-    "inspected_qty",
-    "rem_insp_qty",
-    "total_pcso_remaining_quantiy",
-    "total_qty_dispatch_by_mill",
-    "last_date_of_despatch",
-    "total_qty_received_by_consignee",
-    "total_billed_amount_in_rs",
-    "total_paid_amount_in_rs",
-    "modified",
-    "creation",
-]
-
-# Human-readable labels and units for display
+# ── All 39 tracked fields ─────────────────────────────────────────────────────
 FIELD_META = {
-    "status":                        {"label": "Status",                      "unit": ""},
-    "pcso_date":                     {"label": "PCSO Date",                   "unit": ""},
-    "total_qty":                     {"label": "Order Qty",                   "unit": "bales"},
-    "indentor":                      {"label": "Customer Group",              "unit": ""},
-    "agency":                        {"label": "Agency",                      "unit": ""},
-    "indentor_code":                 {"label": "State Dept. Code",            "unit": ""},
-    "inspected_qty":                 {"label": "Accepted Qty",                "unit": "bales"},
-    "rem_insp_qty":                  {"label": "Rejected Qty",                "unit": "bales"},
-    "total_pcso_remaining_quantiy":  {"label": "Pending Inspection Qty",      "unit": "bales"},
-    "total_qty_dispatch_by_mill":    {"label": "Qty Dispatched by Mill",      "unit": "bales"},
-    "last_date_of_despatch":         {"label": "Last Date of Dispatch",       "unit": ""},
-    "total_qty_received_by_consignee":{"label": "Qty Received by Consignee", "unit": "bales"},
-    "total_billed_amount_in_rs":     {"label": "Billed Amount",               "unit": "₹"},
-    "total_paid_amount_in_rs":       {"label": "Paid Amount",                 "unit": "₹"},
+    # Order Identity
+    "status":                           {"label": "Status",                          "unit": ""},
+    "pcso_date":                        {"label": "PCSO Date",                       "unit": ""},
+    "pcso_month":                       {"label": "PCSO Month",                      "unit": ""},
+    "crop_year":                        {"label": "Crop Year",                       "unit": ""},
+    "marketing_season":                 {"label": "Marketing Season",                "unit": ""},
+    "amendment_no":                     {"label": "Amendment No",                    "unit": ""},
+    "amended_from":                     {"label": "Amended From",                    "unit": ""},
+    # Agency & Indent
+    "indentor":                         {"label": "Customer Group",                  "unit": ""},
+    "indentor_code":                    {"label": "State Dept. Code",               "unit": ""},
+    "agency":                           {"label": "Agency",                          "unit": ""},
+    "agency_code":                      {"label": "Agency Code",                     "unit": ""},
+    "indent_num":                       {"label": "Indent No.",                      "unit": ""},
+    "indent_date":                      {"label": "Indent Date",                     "unit": ""},
+    "bag_color":                        {"label": "Color Code",                      "unit": ""},
+    "month":                            {"label": "Indent Month",                    "unit": ""},
+    # Quantities
+    "total_qty":                        {"label": "Order Qty",                       "unit": "bales"},
+    "total_pcso_quantity":              {"label": "Total PCSO Qty",                  "unit": "bales"},
+    "total_icall_quantity_in_bales":    {"label": "I-CALL Qty",                      "unit": "bales"},
+    "total_reallocated_qty_in_bales":   {"label": "Reallocated Qty",                 "unit": "bales"},
+    "inspected_qty":                    {"label": "Accepted Qty",                    "unit": "bales"},
+    "rem_insp_qty":                     {"label": "Rejected Qty",                    "unit": "bales"},
+    "total_pcso_remaining_quantiy":     {"label": "Pending Inspection Qty",          "unit": "bales"},
+    "total_delivered_quantity":         {"label": "Total Accepted Qty",              "unit": "bales"},
+    "total_rejected_quantity":          {"label": "Total Rejected Qty",              "unit": "bales"},
+    "total_withdraw_qty":               {"label": "Withdrawn Qty",                   "unit": "bales"},
+    "total_qty_dispatch_by_mill":       {"label": "Qty Dispatched by Mill",          "unit": "bales"},
+    "total_qty_received_by_consignee":  {"label": "Qty Received by Consignee",       "unit": "bales"},
+    "total_billed_qty_in_bales":        {"label": "Billed Qty",                      "unit": "bales"},
+    "lot_size":                         {"label": "Container Capacity",              "unit": "bales"},
+    # Dates
+    "last_date_of_inspection":          {"label": "Last Date of Inspection",         "unit": ""},
+    "last_date_of_despatch":            {"label": "Last Date of Dispatch",           "unit": ""},
+    "pcso_last_date_of_inspection":     {"label": "PCSO Last Date of Inspection",    "unit": ""},
+    "pcso_last_date_of_dispatch":       {"label": "PCSO Last Date of Dispatch",      "unit": ""},
+    "tax_amendment_date":               {"label": "Amendment Date",                  "unit": ""},
+    "submission_time":                  {"label": "Document Submission Time",        "unit": ""},
+    # Financial
+    "exfactory_price":                  {"label": "Ex-Factory Price (Per 100 Bags)", "unit": "Rs"},
+    "total_billed_amount_in_rs":        {"label": "Billed Amount",                   "unit": "Rs"},
+    "total_paid_amount_in_rs":          {"label": "Paid Amount",                     "unit": "Rs"},
+    # Linkage & Logistics
+    "jci_linkage":                      {"label": "JCI Linkage",                     "unit": ""},
+    "jci_linkage_percentage":           {"label": "JCI Linkage %",                   "unit": ""},
+    "pcso_allocation":                  {"label": "PCSO Allocation ID",              "unit": ""},
+    "reallocated_pcso":                 {"label": "Reallocated PCSO",                "unit": ""},
+    "pcso_reallocation_id":             {"label": "PCSO Reallocation ID",            "unit": ""},
+    "reallocated_from":                 {"label": "Reallocated From PCSO",           "unit": ""},
+    "mode_of_transport":                {"label": "Mode of Transport",               "unit": ""},
+    "transport_mode":                   {"label": "Transport Mode",                  "unit": ""},
+    "inspection_agency":                {"label": "Inspection Agency",               "unit": ""},
 }
 
-# Fields that should NOT trigger change detection (internal/metadata)
+TRACKED_FIELDS = list(FIELD_META.keys()) + ["name", "modified", "creation"]
 IGNORE_FOR_DETECTION = {"name", "modified", "creation"}
 
 # ── Frappe Login ──────────────────────────────────────────────────────────────
@@ -113,37 +131,29 @@ def save_snapshot(all_orders_by_mill):
     for mill_name, orders in all_orders_by_mill.items():
         for o in orders:
             key = f"{mill_name}::{o['name']}"
-            # Store full order data for field-by-field comparison
             snapshot[key] = {f: o.get(f) for f in TRACKED_FIELDS}
     with open(SNAPSHOT_FILE, "w") as f:
         json.dump(snapshot, f, indent=2)
 
 # ── Change Detection ──────────────────────────────────────────────────────────
 def find_changes(mill_name, orders, snapshot):
-    """
-    For each order, compare each tracked field against the snapshot.
-    Returns list of orders with _change_type and _changes dict attached.
-    """
     results = []
     for order in orders:
         key      = f"{mill_name}::{order['name']}"
         old_data = snapshot.get(key)
 
         if old_data is None:
-            # Brand new order
             order["_change_type"] = "NEW"
             order["_changes"]     = {}
             results.append(order)
             continue
 
-        # Compare each tracked field (excluding metadata fields)
         changes = {}
         for field in TRACKED_FIELDS:
             if field in IGNORE_FOR_DETECTION:
                 continue
             old_val = old_data.get(field)
             new_val = order.get(field)
-            # Normalise None and 0 carefully — treat None vs 0 as a real change
             if str(old_val) != str(new_val):
                 changes[field] = {"old": old_val, "new": new_val}
 
@@ -154,38 +164,35 @@ def find_changes(mill_name, orders, snapshot):
 
     return results
 
-# ── Format field value for display ───────────────────────────────────────────
+# ── Format Values ─────────────────────────────────────────────────────────────
 def fmt(field, value):
     if value is None or value == "" or value == "None":
         return "—"
     meta = FIELD_META.get(field, {})
     unit = meta.get("unit", "")
-    # Numeric with bales unit
     if unit == "bales":
         try:
             return f"{int(float(value)):,} bales"
         except (ValueError, TypeError):
             return str(value)
-    # Currency
-    if unit == "₹":
+    if unit == "Rs":
         try:
-            return f"₹{float(value):,.2f}"
+            return f"Rs {float(value):,.2f}"
         except (ValueError, TypeError):
             return str(value)
     return str(value)
 
-# ── Build order rows for email ────────────────────────────────────────────────
+# ── Build Order Block ─────────────────────────────────────────────────────────
 def build_order_block(order, mill_color):
-    is_new       = order["_change_type"] == "NEW"
-    changes      = order["_changes"]
-    badge_color  = "#1a7a4a" if is_new else "#b45309"
-    badge_label  = "NEW" if is_new else "UPDATED"
-    order_url    = f"{PORTAL_URL}/app/pcso/{order['name']}"
+    is_new      = order["_change_type"] == "NEW"
+    changes     = order["_changes"]
+    badge_color = "#1a7a4a" if is_new else "#b45309"
+    badge_label = "NEW" if is_new else "UPDATED"
+    order_url   = f"{PORTAL_URL}/app/pcso/{order['name']}"
 
-    # Header row for this order
     header = f"""
     <tr>
-      <td colspan="3" style="padding:10px 12px 6px;background:#f9fafb;
+      <td colspan="2" style="padding:10px 12px 6px;background:#f9fafb;
                               border-top:2px solid {mill_color};">
         <span style="background:{badge_color};color:#fff;padding:2px 8px;
                      border-radius:3px;font-size:11px;font-weight:600;
@@ -197,22 +204,19 @@ def build_order_block(order, mill_color):
       </td>
     </tr>"""
 
-    # One row per tracked field (skip name/modified/creation)
     field_rows = ""
     for field, meta in FIELD_META.items():
-        new_val     = order.get(field)
-        is_changed  = field in changes
-        old_val     = changes[field]["old"] if is_changed else None
-
-        # Row background: highlight changed fields
-        row_bg = "#fffbeb" if is_changed else "#ffffff"
+        new_val    = order.get(field)
+        is_changed = field in changes
+        old_val    = changes[field]["old"] if is_changed else None
+        row_bg     = "#fffbeb" if is_changed else "#ffffff"
         label_color = "#92400e" if is_changed else "#6b7280"
 
         if is_changed:
             value_cell = f"""
               <span style="color:#dc2626;text-decoration:line-through;
                            font-size:12px;">{fmt(field, old_val)}</span>
-              <span style="margin:0 6px;color:#9ca3af;">→</span>
+              <span style="margin:0 6px;color:#9ca3af;">&#8594;</span>
               <span style="color:#15803d;font-weight:600;">{fmt(field, new_val)}</span>"""
         else:
             value_cell = f'<span style="color:#374151;">{fmt(field, new_val)}</span>'
@@ -232,7 +236,7 @@ def build_order_block(order, mill_color):
 
     return header + field_rows
 
-# ── Build mill section ────────────────────────────────────────────────────────
+# ── Build Mill Section ────────────────────────────────────────────────────────
 def build_mill_section(mill, new_orders):
     order_blocks = ""
     for order in new_orders:
@@ -282,13 +286,12 @@ def send_email(mills_with_orders):
       {sections}
     </div>
 
-    <!-- Legend -->
     <div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;
                 padding:12px 16px;margin-bottom:16px;font-size:12px;color:#6b7280;">
       <strong style="color:#374151;">How to read this email:</strong>
       &nbsp;&nbsp;
       <span style="color:#dc2626;text-decoration:line-through;">Old value</span>
-      &nbsp;→&nbsp;
+      &nbsp;&#8594;&nbsp;
       <span style="color:#15803d;font-weight:600;">New value</span>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <span style="background:#fffbeb;padding:1px 6px;border-radius:3px;">
