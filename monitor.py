@@ -10,30 +10,10 @@ from datetime import datetime
 PORTAL_URL = "https://smart.jutecomm.gov.in"
 
 MILLS = [
-    {
-        "name":     "KCL",
-        "username": os.environ["JUTECOMM_USERNAME_1"],
-        "password": os.environ["JUTECOMM_PASSWORD_1"],
-        "color":    "#1d4ed8",   # blue
-    },
-    {
-        "name":     "KJPL",
-        "username": os.environ["JUTECOMM_USERNAME_2"],
-        "password": os.environ["JUTECOMM_PASSWORD_2"],
-        "color":    "#7c3aed",   # purple
-    },
-    {
-        "name":     "Tepcon",
-        "username": os.environ["JUTECOMM_USERNAME_3"],
-        "password": os.environ["JUTECOMM_PASSWORD_3"],
-        "color":    "#b45309",   # amber
-    },
-    {
-        "name":     "Kaliaganj",
-        "username": os.environ["JUTECOMM_USERNAME_4"],
-        "password": os.environ["JUTECOMM_PASSWORD_4"],
-        "color":    "#0f766e",   # teal
-    },
+    {"name": "KCL",       "username": os.environ["JUTECOMM_USERNAME_1"], "password": os.environ["JUTECOMM_PASSWORD_1"], "color": "#1d4ed8"},
+    {"name": "KJPL",      "username": os.environ["JUTECOMM_USERNAME_2"], "password": os.environ["JUTECOMM_PASSWORD_2"], "color": "#7c3aed"},
+    {"name": "Tepcon",    "username": os.environ["JUTECOMM_USERNAME_3"], "password": os.environ["JUTECOMM_PASSWORD_3"], "color": "#b45309"},
+    {"name": "Kaliaganj", "username": os.environ["JUTECOMM_USERNAME_4"], "password": os.environ["JUTECOMM_PASSWORD_4"], "color": "#0f766e"},
 ]
 
 GMAIL_SENDER = os.environ["GMAIL_SENDER"]
@@ -42,11 +22,47 @@ ALERT_EMAILS = [e.strip() for e in os.environ["ALERT_EMAIL"].split(",") if e.str
 
 SNAPSHOT_FILE = "last_seen_orders.json"
 
-FIELDS = [
-    "name", "pcso_date", "total_qty",
-    "indentor", "agency", "indentor_code",
-    "status", "modified", "creation",
+# All 13 fields to fetch, track and display
+TRACKED_FIELDS = [
+    "name",
+    "status",
+    "pcso_date",
+    "total_qty",
+    "indentor",
+    "agency",
+    "indentor_code",
+    "inspected_qty",
+    "rem_insp_qty",
+    "total_pcso_remaining_quantiy",
+    "total_qty_dispatch_by_mill",
+    "last_date_of_despatch",
+    "total_qty_received_by_consignee",
+    "total_billed_amount_in_rs",
+    "total_paid_amount_in_rs",
+    "modified",
+    "creation",
 ]
+
+# Human-readable labels and units for display
+FIELD_META = {
+    "status":                        {"label": "Status",                      "unit": ""},
+    "pcso_date":                     {"label": "PCSO Date",                   "unit": ""},
+    "total_qty":                     {"label": "Order Qty",                   "unit": "bales"},
+    "indentor":                      {"label": "Customer Group",              "unit": ""},
+    "agency":                        {"label": "Agency",                      "unit": ""},
+    "indentor_code":                 {"label": "State Dept. Code",            "unit": ""},
+    "inspected_qty":                 {"label": "Accepted Qty",                "unit": "bales"},
+    "rem_insp_qty":                  {"label": "Rejected Qty",                "unit": "bales"},
+    "total_pcso_remaining_quantiy":  {"label": "Pending Inspection Qty",      "unit": "bales"},
+    "total_qty_dispatch_by_mill":    {"label": "Qty Dispatched by Mill",      "unit": "bales"},
+    "last_date_of_despatch":         {"label": "Last Date of Dispatch",       "unit": ""},
+    "total_qty_received_by_consignee":{"label": "Qty Received by Consignee", "unit": "bales"},
+    "total_billed_amount_in_rs":     {"label": "Billed Amount",               "unit": "₹"},
+    "total_paid_amount_in_rs":       {"label": "Paid Amount",                 "unit": "₹"},
+}
+
+# Fields that should NOT trigger change detection (internal/metadata)
+IGNORE_FOR_DETECTION = {"name", "modified", "creation"}
 
 # ── Frappe Login ──────────────────────────────────────────────────────────────
 def get_session(username, password):
@@ -73,8 +89,8 @@ def get_session(username, password):
 # ── Fetch Orders ──────────────────────────────────────────────────────────────
 def fetch_orders(session):
     params = {
-        "fields":           json.dumps(FIELDS),
-        "order_by":         "modified desc",
+        "fields":            json.dumps(TRACKED_FIELDS),
+        "order_by":          "modified desc",
         "limit_page_length": 50,
     }
     resp = session.get(
@@ -85,7 +101,7 @@ def fetch_orders(session):
     resp.raise_for_status()
     return resp.json().get("data", [])
 
-# ── Snapshot Helpers ──────────────────────────────────────────────────────────
+# ── Snapshot ──────────────────────────────────────────────────────────────────
 def load_snapshot():
     if os.path.exists(SNAPSHOT_FILE):
         with open(SNAPSHOT_FILE, "r") as f:
@@ -93,71 +109,137 @@ def load_snapshot():
     return {}
 
 def save_snapshot(all_orders_by_mill):
-    """Flatten all mills into one snapshot dict keyed by mill+order_name."""
     snapshot = {}
     for mill_name, orders in all_orders_by_mill.items():
         for o in orders:
             key = f"{mill_name}::{o['name']}"
-            snapshot[key] = o.get("modified", o.get("creation", ""))
+            # Store full order data for field-by-field comparison
+            snapshot[key] = {f: o.get(f) for f in TRACKED_FIELDS}
     with open(SNAPSHOT_FILE, "w") as f:
         json.dump(snapshot, f, indent=2)
 
-def find_new_orders(mill_name, orders, snapshot):
-    new_or_changed = []
+# ── Change Detection ──────────────────────────────────────────────────────────
+def find_changes(mill_name, orders, snapshot):
+    """
+    For each order, compare each tracked field against the snapshot.
+    Returns list of orders with _change_type and _changes dict attached.
+    """
+    results = []
     for order in orders:
-        key        = f"{mill_name}::{order['name']}"
-        current_ts = order.get("modified", order.get("creation", ""))
-        if key not in snapshot:
+        key      = f"{mill_name}::{order['name']}"
+        old_data = snapshot.get(key)
+
+        if old_data is None:
+            # Brand new order
             order["_change_type"] = "NEW"
-            new_or_changed.append(order)
-        elif current_ts != snapshot[key]:
+            order["_changes"]     = {}
+            results.append(order)
+            continue
+
+        # Compare each tracked field (excluding metadata fields)
+        changes = {}
+        for field in TRACKED_FIELDS:
+            if field in IGNORE_FOR_DETECTION:
+                continue
+            old_val = old_data.get(field)
+            new_val = order.get(field)
+            # Normalise None and 0 carefully — treat None vs 0 as a real change
+            if str(old_val) != str(new_val):
+                changes[field] = {"old": old_val, "new": new_val}
+
+        if changes:
             order["_change_type"] = "UPDATED"
-            new_or_changed.append(order)
-    return new_or_changed
+            order["_changes"]     = changes
+            results.append(order)
 
-# ── Email ─────────────────────────────────────────────────────────────────────
-def build_mill_section(mill, new_orders):
-    """Build an HTML table block for one mill."""
-    rows = ""
-    for o in new_orders:
-        is_new       = o["_change_type"] == "NEW"
-        badge_color  = "#1a7a4a" if is_new else "#b45309"
-        badge_label  = "NEW" if is_new else "UPDATED"
-        qty          = o.get("total_qty")
-        qty_str      = f"{int(qty):,} bales" if qty is not None else "—"
-        order_url    = f"{PORTAL_URL}/app/pcso/{o['name']}"
+    return results
 
-        rows += f"""
-        <tr>
-          <td style="padding:10px;border-bottom:1px solid #e5e7eb;white-space:nowrap;">
-            <span style="background:{badge_color};color:#fff;padding:2px 8px;
-                         border-radius:3px;font-size:11px;font-weight:600;">{badge_label}</span>
+# ── Format field value for display ───────────────────────────────────────────
+def fmt(field, value):
+    if value is None or value == "" or value == "None":
+        return "—"
+    meta = FIELD_META.get(field, {})
+    unit = meta.get("unit", "")
+    # Numeric with bales unit
+    if unit == "bales":
+        try:
+            return f"{int(float(value)):,} bales"
+        except (ValueError, TypeError):
+            return str(value)
+    # Currency
+    if unit == "₹":
+        try:
+            return f"₹{float(value):,.2f}"
+        except (ValueError, TypeError):
+            return str(value)
+    return str(value)
+
+# ── Build order rows for email ────────────────────────────────────────────────
+def build_order_block(order, mill_color):
+    is_new       = order["_change_type"] == "NEW"
+    changes      = order["_changes"]
+    badge_color  = "#1a7a4a" if is_new else "#b45309"
+    badge_label  = "NEW" if is_new else "UPDATED"
+    order_url    = f"{PORTAL_URL}/app/pcso/{order['name']}"
+
+    # Header row for this order
+    header = f"""
+    <tr>
+      <td colspan="3" style="padding:10px 12px 6px;background:#f9fafb;
+                              border-top:2px solid {mill_color};">
+        <span style="background:{badge_color};color:#fff;padding:2px 8px;
+                     border-radius:3px;font-size:11px;font-weight:600;
+                     margin-right:8px;">{badge_label}</span>
+        <a href="{order_url}"
+           style="color:#1d4ed8;font-weight:600;text-decoration:none;
+                  font-family:monospace;font-size:13px;">{order['name']}</a>
+        {"<span style='color:#6b7280;font-size:12px;margin-left:8px;'>" + str(len(changes)) + " field(s) changed</span>" if not is_new else ""}
+      </td>
+    </tr>"""
+
+    # One row per tracked field (skip name/modified/creation)
+    field_rows = ""
+    for field, meta in FIELD_META.items():
+        new_val     = order.get(field)
+        is_changed  = field in changes
+        old_val     = changes[field]["old"] if is_changed else None
+
+        # Row background: highlight changed fields
+        row_bg = "#fffbeb" if is_changed else "#ffffff"
+        label_color = "#92400e" if is_changed else "#6b7280"
+
+        if is_changed:
+            value_cell = f"""
+              <span style="color:#dc2626;text-decoration:line-through;
+                           font-size:12px;">{fmt(field, old_val)}</span>
+              <span style="margin:0 6px;color:#9ca3af;">→</span>
+              <span style="color:#15803d;font-weight:600;">{fmt(field, new_val)}</span>"""
+        else:
+            value_cell = f'<span style="color:#374151;">{fmt(field, new_val)}</span>'
+
+        changed_icon = '<span style="color:#f59e0b;font-size:11px;margin-left:4px;">&#9650;</span>' if is_changed else ""
+
+        field_rows += f"""
+        <tr style="background:{row_bg};">
+          <td style="padding:7px 12px;border-bottom:0.5px solid #e5e7eb;
+                     width:35%;color:{label_color};font-size:12px;font-weight:500;">
+            {meta['label']}{changed_icon}
           </td>
-          <td style="padding:10px;border-bottom:1px solid #e5e7eb;">
-            <a href="{order_url}"
-               style="color:#1d4ed8;font-weight:600;text-decoration:none;
-                      font-family:monospace;font-size:13px;">{o['name']}</a>
-          </td>
-          <td style="padding:10px;border-bottom:1px solid #e5e7eb;color:#374151;">
-            {o.get('pcso_date') or '—'}
-          </td>
-          <td style="padding:10px;border-bottom:1px solid #e5e7eb;color:#374151;font-weight:600;">
-            {qty_str}
-          </td>
-          <td style="padding:10px;border-bottom:1px solid #e5e7eb;color:#374151;">
-            {o.get('indentor') or '—'}
-          </td>
-          <td style="padding:10px;border-bottom:1px solid #e5e7eb;color:#374151;">
-            {o.get('agency') or '—'}
-          </td>
-          <td style="padding:10px;border-bottom:1px solid #e5e7eb;color:#374151;">
-            {o.get('indentor_code') or '—'}
+          <td style="padding:7px 12px;border-bottom:0.5px solid #e5e7eb;font-size:13px;">
+            {value_cell}
           </td>
         </tr>"""
 
+    return header + field_rows
+
+# ── Build mill section ────────────────────────────────────────────────────────
+def build_mill_section(mill, new_orders):
+    order_blocks = ""
+    for order in new_orders:
+        order_blocks += build_order_block(order, mill["color"])
+
     return f"""
-    <div style="margin-bottom:24px;">
-      <!-- Mill header -->
+    <div style="margin-bottom:28px;">
       <div style="background:{mill['color']};padding:10px 16px;border-radius:6px 6px 0 0;">
         <span style="color:#fff;font-weight:700;font-size:14px;">{mill['name']}</span>
         <span style="color:rgba(255,255,255,0.75);font-size:12px;margin-left:8px;">
@@ -165,34 +247,17 @@ def build_mill_section(mill, new_orders):
         </span>
       </div>
       <table style="width:100%;border-collapse:collapse;font-size:13px;
-                    border:1px solid #e5e7eb;border-top:none;">
-        <thead>
-          <tr style="background:#f9fafb;">
-            <th style="padding:8px 10px;text-align:left;color:#6b7280;
-                       border-bottom:2px solid #e5e7eb;font-weight:600;"></th>
-            <th style="padding:8px 10px;text-align:left;color:#6b7280;
-                       border-bottom:2px solid #e5e7eb;font-weight:600;">Order ID</th>
-            <th style="padding:8px 10px;text-align:left;color:#6b7280;
-                       border-bottom:2px solid #e5e7eb;font-weight:600;">PCSO Date</th>
-            <th style="padding:8px 10px;text-align:left;color:#6b7280;
-                       border-bottom:2px solid #e5e7eb;font-weight:600;">Order Qty.</th>
-            <th style="padding:8px 10px;text-align:left;color:#6b7280;
-                       border-bottom:2px solid #e5e7eb;font-weight:600;">Customer Group</th>
-            <th style="padding:8px 10px;text-align:left;color:#6b7280;
-                       border-bottom:2px solid #e5e7eb;font-weight:600;">Agency</th>
-            <th style="padding:8px 10px;text-align:left;color:#6b7280;
-                       border-bottom:2px solid #e5e7eb;font-weight:600;">State Dept. Code</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
+                    border:1px solid #e5e7eb;border-top:none;background:#fff;">
+        {order_blocks}
       </table>
     </div>"""
 
+# ── Send Email ────────────────────────────────────────────────────────────────
 def send_email(mills_with_orders):
-    total = sum(len(orders) for _, orders in mills_with_orders)
+    total      = sum(len(orders) for _, orders in mills_with_orders)
     mill_names = ", ".join(m["name"] for m, _ in mills_with_orders)
-    subject = (
-        f"JuteSmart Alert: {total} New/Updated Order(s) "
+    subject    = (
+        f"JuteSmart Alert: {total} Order(s) "
         f"[{mill_names}] — {datetime.now().strftime('%d %b %Y')}"
     )
 
@@ -203,9 +268,8 @@ def send_email(mills_with_orders):
     html = f"""<!DOCTYPE html>
 <html>
 <body style="margin:0;padding:20px;background:#f3f4f6;font-family:Arial,sans-serif;">
-  <div style="max-width:820px;margin:auto;">
+  <div style="max-width:680px;margin:auto;">
 
-    <!-- Header -->
     <div style="background:#14532d;padding:20px 24px;border-radius:8px 8px 0 0;">
       <h2 style="margin:0;color:#fff;font-size:18px;">JuteSmart PCSO Order Alert</h2>
       <p style="margin:4px 0 0;color:#86efac;font-size:13px;">
@@ -214,12 +278,24 @@ def send_email(mills_with_orders):
       </p>
     </div>
 
-    <!-- Mill sections -->
     <div style="background:#f3f4f6;padding:16px 0;">
       {sections}
     </div>
 
-    <!-- Open portal button -->
+    <!-- Legend -->
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;
+                padding:12px 16px;margin-bottom:16px;font-size:12px;color:#6b7280;">
+      <strong style="color:#374151;">How to read this email:</strong>
+      &nbsp;&nbsp;
+      <span style="color:#dc2626;text-decoration:line-through;">Old value</span>
+      &nbsp;→&nbsp;
+      <span style="color:#15803d;font-weight:600;">New value</span>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span style="background:#fffbeb;padding:1px 6px;border-radius:3px;">
+        Yellow rows = changed fields
+      </span>
+    </div>
+
     <div style="text-align:center;margin-top:8px;">
       <a href="{PORTAL_URL}/app/pcso"
          style="background:#14532d;color:#fff;padding:10px 24px;border-radius:5px;
@@ -253,30 +329,32 @@ def main():
     print(f"JuteSmart Monitor — {datetime.now().strftime('%d %b %Y %H:%M:%S')}")
     print(f"{'='*50}")
 
-    snapshot          = load_snapshot()
+    snapshot           = load_snapshot()
     all_orders_by_mill = {}
-    mills_with_orders  = []   # (mill_dict, [new_orders]) — only mills that have changes
+    mills_with_orders  = []
 
     for mill in MILLS:
         print(f"\n-- {mill['name']} --")
         try:
-            session = get_session(mill["username"], mill["password"])
-            orders  = fetch_orders(session)
+            session    = get_session(mill["username"], mill["password"])
+            orders     = fetch_orders(session)
             print(f"Fetched {len(orders)} orders")
             all_orders_by_mill[mill["name"]] = orders
-            new_orders = find_new_orders(mill["name"], orders, snapshot)
-            if new_orders:
-                print(f"{len(new_orders)} new/updated order(s) found")
-                mills_with_orders.append((mill, new_orders))
+            changed = find_changes(mill["name"], orders, snapshot)
+            if changed:
+                new_count     = sum(1 for o in changed if o["_change_type"] == "NEW")
+                updated_count = sum(1 for o in changed if o["_change_type"] == "UPDATED")
+                print(f"{new_count} new, {updated_count} updated")
+                mills_with_orders.append((mill, changed))
             else:
-                print("No new orders")
+                print("No changes detected")
         except Exception as e:
             print(f"ERROR for {mill['name']}: {e}")
 
     if mills_with_orders:
         send_email(mills_with_orders)
     else:
-        print("\nNo new orders across any mill. Nothing to alert.")
+        print("\nNo changes across any mill. Nothing to alert.")
 
     save_snapshot(all_orders_by_mill)
     print("\nSnapshot updated.")
