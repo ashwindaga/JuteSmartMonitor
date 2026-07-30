@@ -257,17 +257,54 @@ def build_mill_section(mill, new_orders):
     </div>"""
 
 # ── Send Email ────────────────────────────────────────────────────────────────
-def send_email(mills_with_orders):
+def send_email(mills_with_orders, failed_mills=[]):
     total      = sum(len(orders) for _, orders in mills_with_orders)
     mill_names = ", ".join(m["name"] for m, _ in mills_with_orders)
-    subject    = (
-        f"JuteSmart Alert: {total} Order(s) "
-        f"[{mill_names}] — {datetime.now().strftime('%d %b %Y')}"
-    )
+    failed_names = ", ".join(e["mill"]["name"] for e in failed_mills)
+
+    subject_parts = []
+    if total > 0:
+        subject_parts.append(f"{total} Order(s) [{mill_names}]")
+    if failed_mills:
+        subject_parts.append(f"ERROR [{failed_names}]")
+    subject = f"JuteSmart Alert: {' | '.join(subject_parts)} — {datetime.now().strftime('%d %b %Y')}"
 
     sections = ""
     for mill, new_orders in mills_with_orders:
         sections += build_mill_section(mill, new_orders)
+
+    # Add error sections for failed mills
+    for entry in failed_mills:
+        mill  = entry["mill"]
+        error = entry["error"]
+        # Shorten common timeout message for readability
+        if "timed out" in error.lower():
+            friendly = "Connection timed out — portal may be temporarily unreachable."
+        elif "max retries" in error.lower():
+            friendly = "Could not reach portal after multiple attempts."
+        elif "login failed" in error.lower():
+            friendly = "Login failed — please check credentials."
+        else:
+            friendly = error[:200]
+        sections += f"""
+        <div style="margin-bottom:28px;">
+          <div style="background:{mill['color']};padding:10px 16px;border-radius:6px 6px 0 0;">
+            <span style="color:#fff;font-weight:700;font-size:14px;">{mill['name']}</span>
+            <span style="color:rgba(255,255,255,0.75);font-size:12px;margin-left:8px;">
+              Data unavailable
+            </span>
+          </div>
+          <div style="border:1px solid #e5e7eb;border-top:none;background:#fff;
+                      border-radius:0 0 6px 6px;padding:16px;">
+            <span style="display:inline-block;background:#fee2e2;color:#dc2626;
+                         padding:2px 8px;border-radius:3px;font-size:11px;
+                         font-weight:600;margin-right:8px;">ERROR</span>
+            <span style="color:#374151;font-size:13px;">{friendly}</span>
+            <p style="color:#6b7280;font-size:12px;margin:8px 0 0;">
+              Please check the portal manually for {mill['name']} or re-run the workflow.
+            </p>
+          </div>
+        </div>"""
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -336,6 +373,8 @@ def main():
     all_orders_by_mill = {}
     mills_with_orders  = []
 
+    failed_mills = []
+
     for mill in MILLS:
         print(f"\n-- {mill['name']} --")
         try:
@@ -352,10 +391,12 @@ def main():
             else:
                 print("No changes detected")
         except Exception as e:
-            print(f"ERROR for {mill['name']}: {e}")
+            error_msg = str(e)
+            print(f"ERROR for {mill['name']}: {error_msg}")
+            failed_mills.append({"mill": mill, "error": error_msg})
 
-    if mills_with_orders:
-        send_email(mills_with_orders)
+    if mills_with_orders or failed_mills:
+        send_email(mills_with_orders, failed_mills)
     else:
         print("\nNo changes across any mill. Nothing to alert.")
 
