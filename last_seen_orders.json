@@ -260,7 +260,7 @@
     "creation": "2026-07-27 17:37:30.897308"
   },
   "KJPL::PBMRKFDK240726NAF002": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-07-24",
     "pcso_month": "July-2026",
     "crop_year": "KMS-2026-27",
@@ -279,10 +279,10 @@
     "total_pcso_quantity": 960,
     "total_icall_quantity_in_bales": 960,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 192,
+    "inspected_qty": 960,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 768,
-    "total_delivered_quantity": 192,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 960,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -308,7 +308,7 @@
     "transport_mode": "OTHERS",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PBMRKFDK240726NAF002",
-    "modified": "2026-07-31 22:40:12.150839",
+    "modified": "2026-07-31 22:48:26.054992",
     "creation": "2026-07-27 14:44:39.387291"
   },
   "KJPL::PUNSUPK240726NAF001": {
