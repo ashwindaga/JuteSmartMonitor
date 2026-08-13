@@ -2515,10 +2515,10 @@
     "total_pcso_quantity": 1056,
     "total_icall_quantity_in_bales": 576,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 288,
+    "inspected_qty": 576,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 768,
-    "total_delivered_quantity": 288,
+    "total_pcso_remaining_quantiy": 480,
+    "total_delivered_quantity": 576,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -2544,7 +2544,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "MPSCSCK010826SHR007",
-    "modified": "2026-08-12 16:06:37.064447",
+    "modified": "2026-08-13 16:07:16.237284",
     "creation": "2026-08-05 16:55:46.621055"
   },
   "Tepcon::PBMRKFDK240726SHR001": {
@@ -2573,7 +2573,7 @@
     "total_delivered_quantity": 864,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 480,
+    "total_qty_dispatch_by_mill": 576,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 480,
     "lot_size": 48,
@@ -2596,7 +2596,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PBMRKFDK240726SHR001",
-    "modified": "2026-08-12 14:31:01.032309",
+    "modified": "2026-08-13 15:23:27.644343",
     "creation": "2026-07-24 20:41:27.720210"
   },
   "Tepcon::MHMRKFDR270526SHR001": {
