@@ -1,0 +1,48 @@
+name: New Orders Report
+
+on:
+  # Manual trigger only — no schedule
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run new orders report
+        env:
+          JUTECOMM_USERNAME_1:  ${{ secrets.JUTECOMM_USERNAME_1 }}
+          JUTECOMM_PASSWORD_1:  ${{ secrets.JUTECOMM_PASSWORD_1 }}
+          JUTECOMM_USERNAME_2:  ${{ secrets.JUTECOMM_USERNAME_2 }}
+          JUTECOMM_PASSWORD_2:  ${{ secrets.JUTECOMM_PASSWORD_2 }}
+          JUTECOMM_USERNAME_3:  ${{ secrets.JUTECOMM_USERNAME_3 }}
+          JUTECOMM_PASSWORD_3:  ${{ secrets.JUTECOMM_PASSWORD_3 }}
+          JUTECOMM_USERNAME_4:  ${{ secrets.JUTECOMM_USERNAME_4 }}
+          JUTECOMM_PASSWORD_4:  ${{ secrets.JUTECOMM_PASSWORD_4 }}
+          GMAIL_SENDER:         ${{ secrets.GMAIL_SENDER }}
+          GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
+          ALERT_EMAIL:          ${{ secrets.ALERT_EMAIL }}
+        run: python new_orders_report.py
+
+      - name: Save updated manual snapshot
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manual_last_seen.json
+          git diff --staged --quiet || git commit -m "chore: update manual snapshot [skip ci]"
+          git push
