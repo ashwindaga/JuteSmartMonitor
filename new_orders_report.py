@@ -109,8 +109,8 @@ def build_plain_text(mills_data, failed_mills):
         lines.append(f"{mill_name} ({len(orders)} new order(s))")
         lines.append("-" * 30)
         for o in orders:
-            lines.append(f"Customer:          {fmt_val(o.get('indentor'))}")
-            lines.append(f"Qty:               {fmt_qty(o.get('total_qty'))}")
+            lines.append(f"Customer: {fmt_val(o.get('indentor'))}")
+            lines.append(f"Qty: {fmt_qty(o.get('total_qty'))}")
             lines.append(f"Inspection Agency: {fmt_val(o.get('inspection_agency'))}")
             lines.append("")
 
