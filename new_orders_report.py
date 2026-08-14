@@ -3,7 +3,6 @@ import json
 import requests
 import smtplib
 from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
 # ── Config ───────────────────────────────────────────────────────────────────
@@ -20,17 +19,9 @@ GMAIL_SENDER = os.environ["GMAIL_SENDER"]
 GMAIL_PASS   = os.environ["GMAIL_APP_PASSWORD"]
 ALERT_EMAILS = [e.strip() for e in os.environ["ALERT_EMAIL"].split(",") if e.strip()]
 
-# Separate snapshot — completely independent of the automated monitor
 SNAPSHOT_FILE = "manual_last_seen.json"
 
-FIELDS = [
-    "name",
-    "total_qty",
-    "indentor",
-    "inspection_agency",
-    "modified",
-    "creation",
-]
+FIELDS = ["name", "total_qty", "indentor", "inspection_agency", "creation"]
 
 # ── Frappe Login ──────────────────────────────────────────────────────────────
 def get_session(username, password):
@@ -87,12 +78,7 @@ def save_snapshot(all_orders_by_mill):
 
 # ── Find New Orders ───────────────────────────────────────────────────────────
 def find_new_orders(mill_name, orders, snapshot):
-    new_orders = []
-    for order in orders:
-        key = f"{mill_name}::{order['name']}"
-        if key not in snapshot:
-            new_orders.append(order)
-    return new_orders
+    return [o for o in orders if f"{mill_name}::{o['name']}" not in snapshot]
 
 # ── Format Helpers ────────────────────────────────────────────────────────────
 def fmt_qty(value):
@@ -108,7 +94,7 @@ def fmt_val(value):
         return "-"
     return str(value)
 
-# ── Plain Text (WhatsApp friendly) ───────────────────────────────────────────
+# ── Build plain text ──────────────────────────────────────────────────────────
 def build_plain_text(mills_data, failed_mills):
     now   = datetime.now().strftime("%d %b %Y, %I:%M %p")
     lines = []
@@ -123,9 +109,8 @@ def build_plain_text(mills_data, failed_mills):
         lines.append(f"{mill_name} ({len(orders)} new order(s))")
         lines.append("-" * 30)
         for o in orders:
-            lines.append(f"Order:             {o['name']}")
+            lines.append(f"Customer:          {fmt_val(o.get('indentor'))}")
             lines.append(f"Qty:               {fmt_qty(o.get('total_qty'))}")
-            lines.append(f"Customer Group:    {fmt_val(o.get('indentor'))}")
             lines.append(f"Inspection Agency: {fmt_val(o.get('inspection_agency'))}")
             lines.append("")
 
@@ -134,133 +119,7 @@ def build_plain_text(mills_data, failed_mills):
             lines.append(f"{entry['mill']['name']} - ERROR: Could not fetch data.")
             lines.append("")
 
-    lines.append(f"Portal: {PORTAL_URL}/app/pcso")
     return "\n".join(lines)
-
-# ── HTML Email ────────────────────────────────────────────────────────────────
-def build_html(mills_data, failed_mills, plain_text):
-    now = datetime.now().strftime("%d %b %Y, %I:%M %p")
-
-    mill_sections = ""
-
-    if not mills_data and not failed_mills:
-        mill_sections = """
-        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;
-                    padding:24px;text-align:center;color:#6b7280;font-size:14px;">
-          No new orders found across all mills.
-        </div>"""
-    else:
-        for mill_name, orders in mills_data:
-            order_rows = ""
-            for o in orders:
-                order_rows += f"""
-                <tr>
-                  <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;
-                             font-family:monospace;font-size:13px;color:#1d4ed8;">
-                    {o['name']}
-                  </td>
-                  <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;
-                             font-size:13px;color:#374151;font-weight:600;">
-                    {fmt_qty(o.get('total_qty'))}
-                  </td>
-                  <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;
-                             font-size:13px;color:#374151;">
-                    {fmt_val(o.get('indentor'))}
-                  </td>
-                  <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;
-                             font-size:13px;color:#374151;">
-                    {fmt_val(o.get('inspection_agency'))}
-                  </td>
-                </tr>"""
-
-            mill_sections += f"""
-            <div style="margin-bottom:24px;">
-              <div style="background:#14532d;padding:10px 16px;border-radius:6px 6px 0 0;">
-                <span style="color:#fff;font-weight:700;font-size:14px;">{mill_name}</span>
-                <span style="color:rgba(255,255,255,0.75);font-size:12px;margin-left:8px;">
-                  {len(orders)} new order(s)
-                </span>
-              </div>
-              <table style="width:100%;border-collapse:collapse;font-size:13px;
-                            border:1px solid #e5e7eb;border-top:none;background:#fff;">
-                <thead>
-                  <tr style="background:#f9fafb;">
-                    <th style="padding:8px 12px;text-align:left;color:#6b7280;
-                               border-bottom:2px solid #e5e7eb;font-weight:600;">Order ID</th>
-                    <th style="padding:8px 12px;text-align:left;color:#6b7280;
-                               border-bottom:2px solid #e5e7eb;font-weight:600;">Order Qty</th>
-                    <th style="padding:8px 12px;text-align:left;color:#6b7280;
-                               border-bottom:2px solid #e5e7eb;font-weight:600;">Customer Group</th>
-                    <th style="padding:8px 12px;text-align:left;color:#6b7280;
-                               border-bottom:2px solid #e5e7eb;font-weight:600;">Inspection Agency</th>
-                  </tr>
-                </thead>
-                <tbody>{order_rows}</tbody>
-              </table>
-            </div>"""
-
-        for entry in failed_mills:
-            mill_sections += f"""
-            <div style="margin-bottom:24px;">
-              <div style="background:#6b7280;padding:10px 16px;border-radius:6px 6px 0 0;">
-                <span style="color:#fff;font-weight:700;font-size:14px;">
-                  {entry['mill']['name']}
-                </span>
-                <span style="color:rgba(255,255,255,0.75);font-size:12px;margin-left:8px;">
-                  Data unavailable
-                </span>
-              </div>
-              <div style="border:1px solid #e5e7eb;border-top:none;background:#fff;
-                          border-radius:0 0 6px 6px;padding:14px 16px;">
-                <span style="background:#fee2e2;color:#dc2626;padding:2px 8px;
-                             border-radius:3px;font-size:11px;font-weight:600;">ERROR</span>
-                <span style="color:#374151;font-size:13px;margin-left:8px;">
-                  Could not fetch data — please check portal manually.
-                </span>
-              </div>
-            </div>"""
-
-    return f"""<!DOCTYPE html>
-<html>
-<body style="margin:0;padding:20px;background:#f3f4f6;font-family:Arial,sans-serif;">
-  <div style="max-width:680px;margin:auto;">
-
-    <div style="background:#14532d;padding:20px 24px;border-radius:8px 8px 0 0;">
-      <h2 style="margin:0;color:#fff;font-size:18px;">New PCSO Orders Report</h2>
-      <p style="margin:4px 0 0;color:#86efac;font-size:13px;">
-        {now} IST &nbsp;|&nbsp; Manually triggered
-      </p>
-    </div>
-
-    <div style="background:#f3f4f6;padding:16px 0;">
-      {mill_sections}
-    </div>
-
-    <!-- WhatsApp copy box -->
-    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;
-                padding:14px 16px;margin-bottom:16px;">
-      <p style="margin:0 0 8px;font-size:12px;font-weight:600;color:#374151;">
-        Copy for WhatsApp:
-      </p>
-      <pre style="margin:0;font-size:12px;color:#374151;white-space:pre-wrap;
-                  font-family:monospace;background:#f9fafb;padding:10px;
-                  border-radius:4px;border:1px solid #e5e7eb;">{plain_text}</pre>
-    </div>
-
-    <div style="text-align:center;">
-      <a href="{PORTAL_URL}/app/pcso"
-         style="background:#14532d;color:#fff;padding:10px 24px;border-radius:5px;
-                text-decoration:none;font-size:13px;font-weight:600;">
-        Open JuteSmart Portal
-      </a>
-    </div>
-
-    <p style="color:#9ca3af;font-size:11px;margin-top:16px;text-align:center;">
-      New Orders Report — manually triggered
-    </p>
-  </div>
-</body>
-</html>"""
 
 # ── Send Email ────────────────────────────────────────────────────────────────
 def send_email(mills_data, failed_mills):
@@ -273,14 +132,10 @@ def send_email(mills_data, failed_mills):
     else:
         subject = f"New PCSO Orders: No new orders — {datetime.now().strftime('%d %b %Y')}"
 
-    html = build_html(mills_data, failed_mills, plain_text)
-
-    msg = MIMEMultipart("alternative")
+    msg = MIMEText(plain_text, "plain")
     msg["Subject"] = subject
     msg["From"]    = GMAIL_SENDER
     msg["To"]      = ", ".join(ALERT_EMAILS)
-    msg.attach(MIMEText(plain_text, "plain"))
-    msg.attach(MIMEText(html, "html"))
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
         smtp.login(GMAIL_SENDER, GMAIL_PASS)
@@ -315,13 +170,11 @@ def main():
             print(f"ERROR for {mill['name']}: {error_msg}")
             failed_mills.append({"mill": mill, "error": error_msg})
 
-    # Always send email regardless — new orders, no orders, or errors
     send_email(mills_data, failed_mills)
 
-    # Only update snapshot if at least one mill succeeded
     if all_orders_by_mill:
         save_snapshot(all_orders_by_mill)
-        print("\nSnapshot (manual_last_seen.json) updated.")
+        print("\nSnapshot updated.")
     else:
         print("\nNo mills succeeded — snapshot not updated.")
 
