@@ -96,9 +96,9 @@ def fmt_val(value):
 
 # ── Build plain text ──────────────────────────────────────────────────────────
 def build_plain_text(mills_data, failed_mills):
-    now   = datetime.now().strftime("%d %b %Y, %I:%M %p")
+    today = datetime.now().strftime("%d %b %Y")
     lines = []
-    lines.append(f"New PCSO Orders - {now} IST")
+    lines.append(f"New PCSO Orders - {today}")
     lines.append("")
 
     if not mills_data and not failed_mills:
