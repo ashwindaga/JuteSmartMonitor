@@ -17,7 +17,7 @@
     "month": "July-2026",
     "total_qty": 2592,
     "total_pcso_quantity": 2208,
-    "total_icall_quantity_in_bales": 1776,
+    "total_icall_quantity_in_bales": 2208,
     "total_reallocated_qty_in_bales": 384,
     "inspected_qty": 1776,
     "rem_insp_qty": 0,
@@ -48,7 +48,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010826KAN001",
-    "modified": "2026-08-14 17:12:15.641017",
+    "modified": "2026-08-15 11:47:45.053626",
     "creation": "2026-08-01 08:18:58.099492"
   },
   "KCL::TGSCSCLK140826KAN001": {
