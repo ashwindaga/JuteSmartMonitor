@@ -589,7 +589,7 @@
     "month": "July-2026",
     "total_qty": 2400,
     "total_pcso_quantity": 2400,
-    "total_icall_quantity_in_bales": 1536,
+    "total_icall_quantity_in_bales": 1824,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 1536,
     "rem_insp_qty": 0,
@@ -620,7 +620,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PSWCK010826NAF001",
-    "modified": "2026-08-17 18:15:09.644565",
+    "modified": "2026-08-18 16:04:43.407649",
     "creation": "2026-08-01 08:24:29.553880"
   },
   "KJPL::TGSCSCLK140826NAF001": {
