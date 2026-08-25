@@ -71,10 +71,10 @@
     "total_pcso_quantity": 910,
     "total_icall_quantity_in_bales": 260,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 0,
+    "inspected_qty": 260,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 910,
-    "total_delivered_quantity": 0,
+    "total_pcso_remaining_quantiy": 650,
+    "total_delivered_quantity": 260,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -100,7 +100,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "CGMRKFDK140826KAN001",
-    "modified": "2026-08-24 18:16:49.030363",
+    "modified": "2026-08-25 17:33:47.313146",
     "creation": "2026-08-14 11:26:12.388195"
   },
   "KCL::PUNGRAINK010826KAN001": {
@@ -129,7 +129,7 @@
     "total_delivered_quantity": 2208,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 1368,
+    "total_qty_dispatch_by_mill": 1440,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 1296,
     "lot_size": 48,
@@ -152,7 +152,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010826KAN001",
-    "modified": "2026-08-25 17:16:07.729033",
+    "modified": "2026-08-25 17:37:41.465352",
     "creation": "2026-08-01 08:18:58.099492"
   },
   "KCL::HRFCSK190826KAN001": {
