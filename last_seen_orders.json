@@ -17,12 +17,12 @@
     "month": "July-2026",
     "total_qty": 1968,
     "total_pcso_quantity": 1968,
-    "total_icall_quantity_in_bales": 1872,
+    "total_icall_quantity_in_bales": 1968,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 1776,
+    "inspected_qty": 1872,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 192,
-    "total_delivered_quantity": 1776,
+    "total_pcso_remaining_quantiy": 96,
+    "total_delivered_quantity": 1872,
     "total_rejected_quantity": 240,
     "total_withdraw_qty": 48,
     "total_qty_dispatch_by_mill": 0,
@@ -48,7 +48,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "MPSCSCK010826KAN001",
-    "modified": "2026-08-24 18:18:28.989106",
+    "modified": "2026-08-25 19:29:43.794035",
     "creation": "2026-08-01 08:50:39.909510"
   },
   "KCL::CGMRKFDK140826KAN001": {
@@ -69,7 +69,7 @@
     "month": "August-2026",
     "total_qty": 910,
     "total_pcso_quantity": 910,
-    "total_icall_quantity_in_bales": 260,
+    "total_icall_quantity_in_bales": 520,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 260,
     "rem_insp_qty": 0,
@@ -100,7 +100,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "CGMRKFDK140826KAN001",
-    "modified": "2026-08-25 17:33:47.313146",
+    "modified": "2026-08-25 19:27:01.040012",
     "creation": "2026-08-14 11:26:12.388195"
   },
   "KCL::PUNGRAINK010826KAN001": {
@@ -5165,7 +5165,7 @@
     "month": "July-2026",
     "total_qty": 816,
     "total_pcso_quantity": 816,
-    "total_icall_quantity_in_bales": 336,
+    "total_icall_quantity_in_bales": 816,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 336,
     "rem_insp_qty": 0,
@@ -5196,7 +5196,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PUNGRAINK010826KAL001",
-    "modified": "2026-08-22 18:01:49.800479",
+    "modified": "2026-08-25 19:23:59.290115",
     "creation": "2026-08-01 08:19:15.257102"
   },
   "Kaliaganj::PBMRKFDK240726KAL002": {
