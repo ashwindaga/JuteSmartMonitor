@@ -34,7 +34,7 @@ FIELD_META = {
     "amended_from":                     {"label": "Amended From",                    "unit": ""},
     # Agency & Indent
     "indentor":                         {"label": "Customer Group",                  "unit": ""},
-    "indentor_code":                    {"label": "State Dept. Code",               "unit": ""},
+    "indentor_code":                    {"label": "State Dept. Code",                "unit": ""},
     "agency":                           {"label": "Agency",                          "unit": ""},
     "agency_code":                      {"label": "Agency Code",                     "unit": ""},
     "indent_num":                       {"label": "Indent No.",                      "unit": ""},
@@ -127,13 +127,15 @@ def load_snapshot():
     return {}
 
 def save_snapshot(all_orders_by_mill):
-    snapshot = {}
+    # Load existing snapshot first — preserve data for any mills that failed
+    existing = load_snapshot()
+    # Only update entries for mills that succeeded this run
     for mill_name, orders in all_orders_by_mill.items():
         for o in orders:
             key = f"{mill_name}::{o['name']}"
-            snapshot[key] = {f: o.get(f) for f in TRACKED_FIELDS}
+            existing[key] = {f: o.get(f) for f in TRACKED_FIELDS}
     with open(SNAPSHOT_FILE, "w") as f:
-        json.dump(snapshot, f, indent=2)
+        json.dump(existing, f, indent=2)
 
 # ── Change Detection ──────────────────────────────────────────────────────────
 def find_changes(mill_name, orders, snapshot):
@@ -258,8 +260,8 @@ def build_mill_section(mill, new_orders):
 
 # ── Send Email ────────────────────────────────────────────────────────────────
 def send_email(mills_with_orders, failed_mills=[]):
-    total      = sum(len(orders) for _, orders in mills_with_orders)
-    mill_names = ", ".join(m["name"] for m, _ in mills_with_orders)
+    total        = sum(len(orders) for _, orders in mills_with_orders)
+    mill_names   = ", ".join(m["name"] for m, _ in mills_with_orders)
     failed_names = ", ".join(e["mill"]["name"] for e in failed_mills)
 
     subject_parts = []
@@ -273,11 +275,9 @@ def send_email(mills_with_orders, failed_mills=[]):
     for mill, new_orders in mills_with_orders:
         sections += build_mill_section(mill, new_orders)
 
-    # Add error sections for failed mills
     for entry in failed_mills:
         mill  = entry["mill"]
         error = entry["error"]
-        # Shorten common timeout message for readability
         if "timed out" in error.lower():
             friendly = "Connection timed out — portal may be temporarily unreachable."
         elif "max retries" in error.lower():
@@ -314,7 +314,7 @@ def send_email(mills_with_orders, failed_mills=[]):
     <div style="background:#14532d;padding:20px 24px;border-radius:8px 8px 0 0;">
       <h2 style="margin:0;color:#fff;font-size:18px;">JuteSmart PCSO Order Alert</h2>
       <p style="margin:4px 0 0;color:#86efac;font-size:13px;">
-        {datetime.now().strftime('%d %b %Y, %I:%M %p')} IST
+        {datetime.now().strftime('%d %b %Y')}
         &nbsp;|&nbsp; {total} order(s) across {len(mills_with_orders)} mill(s)
       </p>
     </div>
@@ -372,8 +372,7 @@ def main():
     snapshot           = load_snapshot()
     all_orders_by_mill = {}
     mills_with_orders  = []
-
-    failed_mills = []
+    failed_mills       = []
 
     for mill in MILLS:
         print(f"\n-- {mill['name']} --")
@@ -400,6 +399,7 @@ def main():
     else:
         print("\nNo changes across any mill. Nothing to alert.")
 
+    # Merge into existing snapshot — failed mills' data is preserved
     save_snapshot(all_orders_by_mill)
     print("\nSnapshot updated.")
 
