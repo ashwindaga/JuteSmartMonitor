@@ -643,10 +643,10 @@
     "total_pcso_quantity": 672,
     "total_icall_quantity_in_bales": 384,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 0,
+    "inspected_qty": 384,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 672,
-    "total_delivered_quantity": 0,
+    "total_pcso_remaining_quantiy": 288,
+    "total_delivered_quantity": 384,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -672,7 +672,7 @@
     "transport_mode": "OTHERS",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PUNSUPK010826SHR001",
-    "modified": "2026-08-24 16:55:24.275192",
+    "modified": "2026-08-25 16:38:09.385360",
     "creation": "2026-08-07 20:28:00.354531"
   },
   "Tepcon::CGMRKFDK140826SHR002": {
@@ -2877,7 +2877,7 @@
     "month": "July-2026",
     "total_qty": 1680,
     "total_pcso_quantity": 1680,
-    "total_icall_quantity_in_bales": 528,
+    "total_icall_quantity_in_bales": 768,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 528,
     "rem_insp_qty": 0,
@@ -2908,7 +2908,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "MPSCSCK010826NAF001",
-    "modified": "2026-08-24 15:58:39.323206",
+    "modified": "2026-08-25 16:17:27.502683",
     "creation": "2026-08-01 08:45:34.462642"
   },
   "KJPL::PSWCK010826NAF001": {
