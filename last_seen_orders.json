@@ -2937,7 +2937,7 @@
     "total_delivered_quantity": 2400,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 0,
+    "total_qty_dispatch_by_mill": 288,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 48,
@@ -2960,7 +2960,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PSWCK010826NAF001",
-    "modified": "2026-08-22 16:48:59.345420",
+    "modified": "2026-08-25 12:09:05.643424",
     "creation": "2026-08-01 08:24:29.553880"
   },
   "KJPL::TGSCSCLK240726NAF001": {
