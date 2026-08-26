@@ -1,6 +1,6 @@
 {
   "KCL::MPSCSCK010826KAN001": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-08-01",
     "pcso_month": "August-2026",
     "crop_year": "KMS-2026-27",
@@ -19,10 +19,10 @@
     "total_pcso_quantity": 1968,
     "total_icall_quantity_in_bales": 1968,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 1872,
+    "inspected_qty": 1968,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 96,
-    "total_delivered_quantity": 1872,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 1968,
     "total_rejected_quantity": 240,
     "total_withdraw_qty": 48,
     "total_qty_dispatch_by_mill": 0,
@@ -48,7 +48,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "MPSCSCK010826KAN001",
-    "modified": "2026-08-25 19:29:43.794035",
+    "modified": "2026-08-26 17:43:05.314077",
     "creation": "2026-08-01 08:50:39.909510"
   },
   "KCL::CGMRKFDK140826KAN001": {
@@ -129,7 +129,7 @@
     "total_delivered_quantity": 2208,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 1638,
+    "total_qty_dispatch_by_mill": 1680,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 1296,
     "lot_size": 48,
@@ -152,7 +152,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010826KAN001",
-    "modified": "2026-08-26 17:09:25.709885",
+    "modified": "2026-08-26 17:18:39.913272",
     "creation": "2026-08-01 08:18:58.099492"
   },
   "KCL::HRFCSK190826KAN001": {
@@ -5277,9 +5277,9 @@
     "total_delivered_quantity": 384,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 288,
+    "total_qty_dispatch_by_mill": 384,
     "total_qty_received_by_consignee": 0,
-    "total_billed_qty_in_bales": 0,
+    "total_billed_qty_in_bales": 384,
     "lot_size": 48,
     "last_date_of_inspection": "2026-08-31",
     "last_date_of_despatch": "2026-09-07",
@@ -5288,7 +5288,7 @@
     "tax_amendment_date": null,
     "submission_time": "2026-08-06 17:46:30.576126",
     "exfactory_price": 10800.76,
-    "total_billed_amount_in_rs": 0.0,
+    "total_billed_amount_in_rs": 22245832.0,
     "total_paid_amount_in_rs": 0.0,
     "jci_linkage": "JC-LC-April-2026-36051",
     "jci_linkage_percentage": "0",
@@ -5300,7 +5300,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010826KAL002",
-    "modified": "2026-08-26 16:38:55.618198",
+    "modified": "2026-08-26 17:47:29.432635",
     "creation": "2026-08-06 17:46:30.584910"
   },
   "Kaliaganj::PBMRKFDK240726KAL001": {
