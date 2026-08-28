@@ -641,7 +641,7 @@
     "month": "July-2026",
     "total_qty": 672,
     "total_pcso_quantity": 672,
-    "total_icall_quantity_in_bales": 384,
+    "total_icall_quantity_in_bales": 672,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 384,
     "rem_insp_qty": 0,
@@ -672,7 +672,7 @@
     "transport_mode": "OTHERS",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PUNSUPK010826SHR001",
-    "modified": "2026-08-25 16:38:09.385360",
+    "modified": "2026-08-28 16:59:30.135204",
     "creation": "2026-08-07 20:28:00.354531"
   },
   "Tepcon::CGMRKFDK140826SHR002": {
@@ -869,7 +869,7 @@
     "submission_time": "2026-07-24 19:15:03.313705",
     "exfactory_price": 12823.92,
     "total_billed_amount_in_rs": 26200732.0,
-    "total_paid_amount_in_rs": 11823186.0,
+    "total_paid_amount_in_rs": 0.0,
     "jci_linkage": "JC-LC-July-2026-102559",
     "jci_linkage_percentage": "0",
     "pcso_allocation": "CGMRKFD27K002-106462",
@@ -3137,7 +3137,7 @@
     "month": "August-2026",
     "total_qty": 520,
     "total_pcso_quantity": 520,
-    "total_icall_quantity_in_bales": 0,
+    "total_icall_quantity_in_bales": 260,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 0,
     "rem_insp_qty": 0,
@@ -3168,7 +3168,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "HRFCSK190826NAF001",
-    "modified": "2026-08-19 15:15:39.896147",
+    "modified": "2026-08-28 16:04:26.026694",
     "creation": "2026-08-19 15:15:36.497243"
   },
   "KJPL::TGSCSCLK140826NAF001": {
@@ -5148,7 +5148,7 @@
     "creation": "2026-04-13 17:48:12.780959"
   },
   "Kaliaganj::PUNGRAINK010826KAL001": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-08-01",
     "pcso_month": "August-2026",
     "crop_year": "KMS-2026-27",
@@ -5167,10 +5167,10 @@
     "total_pcso_quantity": 816,
     "total_icall_quantity_in_bales": 336,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 336,
+    "inspected_qty": 816,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 480,
-    "total_delivered_quantity": 336,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 816,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -5196,7 +5196,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PUNGRAINK010826KAL001",
-    "modified": "2026-08-26 15:28:47.809455",
+    "modified": "2026-08-28 19:35:34.704176",
     "creation": "2026-08-01 08:19:15.257102"
   },
   "Kaliaganj::PBMRKFDK240726KAL002": {
