@@ -3405,7 +3405,7 @@
     "total_delivered_quantity": 960,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 192,
+    "total_qty_dispatch_by_mill": 288,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 48,
@@ -3428,7 +3428,7 @@
     "transport_mode": "OTHERS",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PBMRKFDK240726NAF002",
-    "modified": "2026-08-31 17:04:53.255918",
+    "modified": "2026-09-02 12:29:26.220422",
     "creation": "2026-07-27 14:44:39.387291"
   },
   "KJPL::PUNSUPK240726NAF001": {
@@ -4189,8 +4189,8 @@
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 2200,
     "lot_size": 100,
-    "last_date_of_inspection": "2026-08-31",
-    "last_date_of_despatch": "2026-08-31",
+    "last_date_of_inspection": "2026-09-30",
+    "last_date_of_despatch": "2026-09-30",
     "pcso_last_date_of_inspection": "2026-03-31",
     "pcso_last_date_of_dispatch": "2026-04-07",
     "tax_amendment_date": null,
@@ -4208,7 +4208,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK180326NAF001",
-    "modified": "2026-07-31 17:29:35.989384",
+    "modified": "2026-09-02 12:09:52.754317",
     "creation": "2026-03-18 13:21:03.881584"
   },
   "KJPL::ODSCSCK180326NAF001": {
@@ -4241,8 +4241,8 @@
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 2550,
     "lot_size": 50,
-    "last_date_of_inspection": "2026-08-31",
-    "last_date_of_despatch": "2026-08-31",
+    "last_date_of_inspection": "2026-09-30",
+    "last_date_of_despatch": "2026-09-30",
     "pcso_last_date_of_inspection": "2026-03-31",
     "pcso_last_date_of_dispatch": "2026-04-07",
     "tax_amendment_date": null,
@@ -4260,7 +4260,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "ODSCSCK180326NAF001",
-    "modified": "2026-07-31 17:27:32.142062",
+    "modified": "2026-09-02 12:12:48.738543",
     "creation": "2026-03-18 13:52:12.048020"
   },
   "KJPL::ODSCSCK220426NAF001": {
