@@ -129,7 +129,7 @@
     "total_delivered_quantity": 2208,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 1872,
+    "total_qty_dispatch_by_mill": 2058,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 1872,
     "lot_size": 48,
@@ -152,7 +152,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010826KAN001",
-    "modified": "2026-09-01 13:56:28.149779",
+    "modified": "2026-09-03 12:36:18.477132",
     "creation": "2026-08-01 08:18:58.099492"
   },
   "KCL::HRFCSK190826KAN001": {
@@ -3405,7 +3405,7 @@
     "total_delivered_quantity": 960,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 480,
+    "total_qty_dispatch_by_mill": 672,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 48,
@@ -3428,7 +3428,7 @@
     "transport_mode": "OTHERS",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PBMRKFDK240726NAF002",
-    "modified": "2026-09-02 18:18:58.470677",
+    "modified": "2026-09-03 11:37:12.255978",
     "creation": "2026-07-27 14:44:39.387291"
   },
   "KJPL::PUNSUPK240726NAF001": {
