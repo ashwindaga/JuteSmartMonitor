@@ -25,7 +25,7 @@
     "total_delivered_quantity": 1968,
     "total_rejected_quantity": 240,
     "total_withdraw_qty": 48,
-    "total_qty_dispatch_by_mill": 954,
+    "total_qty_dispatch_by_mill": 1008,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 768,
     "lot_size": 48,
@@ -48,7 +48,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "MPSCSCK010826KAN001",
-    "modified": "2026-09-11 12:18:39.939235",
+    "modified": "2026-09-11 13:33:35.032637",
     "creation": "2026-08-01 08:50:39.909510"
   },
   "KCL::CGMRKFDK140826KAN001": {
