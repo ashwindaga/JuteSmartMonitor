@@ -2937,9 +2937,9 @@
     "total_delivered_quantity": 2400,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 1200,
+    "total_qty_dispatch_by_mill": 1296,
     "total_qty_received_by_consignee": 0,
-    "total_billed_qty_in_bales": 1200,
+    "total_billed_qty_in_bales": 1296,
     "lot_size": 48,
     "last_date_of_inspection": "2026-09-30",
     "last_date_of_despatch": "2026-09-30",
@@ -2948,7 +2948,7 @@
     "tax_amendment_date": null,
     "submission_time": "2026-08-01 08:24:29.552916",
     "exfactory_price": 10800.76,
-    "total_billed_amount_in_rs": 69714950.0,
+    "total_billed_amount_in_rs": 75285878.0,
     "total_paid_amount_in_rs": 0.0,
     "jci_linkage": "JC-LC-April-2026-36051",
     "jci_linkage_percentage": "0",
@@ -2960,7 +2960,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PSWCK010826NAF001",
-    "modified": "2026-09-11 19:38:52.071855",
+    "modified": "2026-09-12 11:49:47.374662",
     "creation": "2026-08-01 08:24:29.553880"
   },
   "KJPL::TGSCSCLK240726NAF001": {
@@ -3613,7 +3613,7 @@
     "total_delivered_quantity": 1296,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 768,
+    "total_qty_dispatch_by_mill": 816,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 768,
     "lot_size": 48,
@@ -3636,7 +3636,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PBMRKFDK240726NAF001",
-    "modified": "2026-08-31 17:04:54.493637",
+    "modified": "2026-09-12 13:07:27.720404",
     "creation": "2026-07-24 20:41:23.904440"
   },
   "KJPL::TGSCSCLK110226NAF001": {
@@ -6985,7 +6985,7 @@
     "month": "August-2026",
     "total_qty": 288,
     "total_pcso_quantity": 288,
-    "total_icall_quantity_in_bales": 0,
+    "total_icall_quantity_in_bales": 288,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 0,
     "rem_insp_qty": 0,
@@ -7016,7 +7016,7 @@
     "transport_mode": "OTHERS",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "PUNGRAINK010926KAL001",
-    "modified": "2026-09-01 11:55:11.664238",
+    "modified": "2026-09-12 11:41:28.746846",
     "creation": "2026-09-01 11:55:02.959415"
   },
   "KCL::PUNGRAINK010926KAN001": {
