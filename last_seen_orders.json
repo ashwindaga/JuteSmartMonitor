@@ -181,7 +181,7 @@
     "total_delivered_quantity": 780,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 0,
+    "total_qty_dispatch_by_mill": 780,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 130,
@@ -204,7 +204,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "HRFCSK190826KAN001",
-    "modified": "2026-08-31 19:18:17.515335",
+    "modified": "2026-09-18 18:04:34.281174",
     "creation": "2026-08-19 15:14:07.696128"
   },
   "KCL::TGSCSCLK140826KAN001": {
@@ -1117,7 +1117,7 @@
     "total_delivered_quantity": 520,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 156,
+    "total_qty_dispatch_by_mill": 520,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 130,
@@ -1140,7 +1140,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "HRFCSK190826SHR001",
-    "modified": "2026-09-18 13:19:36.839935",
+    "modified": "2026-09-18 16:20:34.793858",
     "creation": "2026-08-19 15:15:14.520255"
   },
   "Tepcon::PUNGRAINK010826SHR001": {
@@ -1213,7 +1213,7 @@
     "month": "August-2026",
     "total_qty": 900,
     "total_pcso_quantity": 900,
-    "total_icall_quantity_in_bales": 700,
+    "total_icall_quantity_in_bales": 900,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 700,
     "rem_insp_qty": 0,
@@ -1221,7 +1221,7 @@
     "total_delivered_quantity": 700,
     "total_rejected_quantity": 300,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 388,
+    "total_qty_dispatch_by_mill": 700,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 100,
@@ -1244,7 +1244,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK140826SHR002",
-    "modified": "2026-09-18 13:13:52.417142",
+    "modified": "2026-09-18 17:33:54.200817",
     "creation": "2026-08-14 12:21:32.824494"
   },
   "Tepcon::MPSCSCK010826SHR004": {
@@ -2752,7 +2752,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "TNCSCK100426SHR001",
-    "modified": "2026-06-01 11:36:53.833988",
+    "modified": "2026-09-18 16:14:09.930879",
     "creation": "2026-04-10 12:56:35.345276"
   },
   "Tepcon::BRFCSK120526SHR002": {
@@ -3145,9 +3145,9 @@
     "total_delivered_quantity": 520,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 260,
+    "total_qty_dispatch_by_mill": 520,
     "total_qty_received_by_consignee": 0,
-    "total_billed_qty_in_bales": 260,
+    "total_billed_qty_in_bales": 520,
     "lot_size": 130,
     "last_date_of_inspection": "2026-09-30",
     "last_date_of_despatch": "2026-09-30",
@@ -3156,7 +3156,7 @@
     "tax_amendment_date": null,
     "submission_time": "2026-08-19 15:15:36.496098",
     "exfactory_price": 10800.76,
-    "total_billed_amount_in_rs": 14874297.0,
+    "total_billed_amount_in_rs": 29256926.0,
     "total_paid_amount_in_rs": 13461077.0,
     "jci_linkage": "JC-LC-August-2026-129459",
     "jci_linkage_percentage": "0",
@@ -3168,7 +3168,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "HRFCSK190826NAF001",
-    "modified": "2026-09-15 15:52:33.781534",
+    "modified": "2026-09-18 17:46:24.457408",
     "creation": "2026-08-19 15:15:36.497243"
   },
   "KJPL::TGSCSCLK140826NAF001": {
@@ -5040,7 +5040,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TNCSCK100426NAF002",
-    "modified": "2026-06-01 11:36:57.272724",
+    "modified": "2026-09-18 16:14:05.990785",
     "creation": "2026-04-13 13:27:06.856339"
   },
   "KJPL::TNCSCK100426NAF001": {
@@ -5092,7 +5092,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TNCSCK100426NAF001",
-    "modified": "2026-06-01 11:36:56.146038",
+    "modified": "2026-09-18 16:14:07.720886",
     "creation": "2026-04-10 12:56:34.320265"
   },
   "KJPL::BRFCSK180326NAF001": {
@@ -6444,7 +6444,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TNCSCK100426KAL001",
-    "modified": "2026-06-01 11:36:57.667615",
+    "modified": "2026-09-18 16:14:05.547651",
     "creation": "2026-04-10 12:56:38.993624"
   },
   "Kaliaganj::BRFCSK120526KAL001": {
@@ -6552,7 +6552,7 @@
     "creation": "2026-04-16 13:33:40.875187"
   },
   "KCL::PBMRKFDK010926KAN002": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-09-01",
     "pcso_month": "September-2026",
     "crop_year": "KMS-2026-27",
@@ -6571,10 +6571,10 @@
     "total_pcso_quantity": 1728,
     "total_icall_quantity_in_bales": 1728,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 1440,
+    "inspected_qty": 1728,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 288,
-    "total_delivered_quantity": 1440,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 1728,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -6600,7 +6600,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "PBMRKFDK010926KAN002",
-    "modified": "2026-09-16 18:36:16.126735",
+    "modified": "2026-09-18 18:06:11.196464",
     "creation": "2026-09-01 13:47:39.077398"
   },
   "KCL::PBMRKFDK010926KAN001": {
@@ -6725,7 +6725,7 @@
     "month": "August-2026",
     "total_qty": 1170,
     "total_pcso_quantity": 1170,
-    "total_icall_quantity_in_bales": 260,
+    "total_icall_quantity_in_bales": 520,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 260,
     "rem_insp_qty": 0,
@@ -6756,7 +6756,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PBMRKFDK010926NAF001",
-    "modified": "2026-09-16 18:36:45.079945",
+    "modified": "2026-09-18 16:27:29.674036",
     "creation": "2026-09-01 12:53:23.941254"
   },
   "KJPL::APSCSCLK010926NAF001": {
