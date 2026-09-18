@@ -661,7 +661,7 @@
     "submission_time": "2026-08-07 20:28:00.346357",
     "exfactory_price": 10800.76,
     "total_billed_amount_in_rs": 16078225.0,
-    "total_paid_amount_in_rs": 0.0,
+    "total_paid_amount_in_rs": 4838572.0,
     "jci_linkage": "JC-LC-April-2026-36051",
     "jci_linkage_percentage": "0",
     "pcso_allocation": null,
@@ -1117,7 +1117,7 @@
     "total_delivered_quantity": 520,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 0,
+    "total_qty_dispatch_by_mill": 156,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 130,
@@ -1140,7 +1140,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "HRFCSK190826SHR001",
-    "modified": "2026-08-31 19:26:49.302263",
+    "modified": "2026-09-18 13:19:36.839935",
     "creation": "2026-08-19 15:15:14.520255"
   },
   "Tepcon::PUNGRAINK010826SHR001": {
@@ -1221,7 +1221,7 @@
     "total_delivered_quantity": 700,
     "total_rejected_quantity": 300,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 0,
+    "total_qty_dispatch_by_mill": 388,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 100,
@@ -1244,7 +1244,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK140826SHR002",
-    "modified": "2026-09-08 17:24:34.005312",
+    "modified": "2026-09-18 13:13:52.417142",
     "creation": "2026-08-14 12:21:32.824494"
   },
   "Tepcon::MPSCSCK010826SHR004": {
@@ -3157,7 +3157,7 @@
     "submission_time": "2026-08-19 15:15:36.496098",
     "exfactory_price": 10800.76,
     "total_billed_amount_in_rs": 14874297.0,
-    "total_paid_amount_in_rs": 0.0,
+    "total_paid_amount_in_rs": 13461077.0,
     "jci_linkage": "JC-LC-August-2026-129459",
     "jci_linkage_percentage": "0",
     "pcso_allocation": "HRFCS27K003-134907",
