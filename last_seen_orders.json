@@ -5381,7 +5381,7 @@
     "total_delivered_quantity": 720,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 192,
+    "total_qty_dispatch_by_mill": 720,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 48,
@@ -5404,7 +5404,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "CGMRKFDK140826KAL001",
-    "modified": "2026-09-19 17:46:09.560458",
+    "modified": "2026-09-19 19:01:37.168404",
     "creation": "2026-08-14 11:16:35.333257"
   },
   "Kaliaganj::TGSCSCLK110226KAL001": {
