@@ -1221,7 +1221,7 @@
     "total_delivered_quantity": 900,
     "total_rejected_quantity": 300,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 700,
+    "total_qty_dispatch_by_mill": 900,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 700,
     "lot_size": 100,
@@ -1244,7 +1244,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK140826SHR002",
-    "modified": "2026-09-19 17:01:48.655535",
+    "modified": "2026-09-24 13:20:32.913355",
     "creation": "2026-08-14 12:21:32.824494"
   },
   "Tepcon::MPSCSCK010826SHR004": {
@@ -6629,7 +6629,7 @@
     "total_delivered_quantity": 1430,
     "total_rejected_quantity": 390,
     "total_withdraw_qty": 520,
-    "total_qty_dispatch_by_mill": 520,
+    "total_qty_dispatch_by_mill": 910,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 520,
     "lot_size": 130,
@@ -6652,7 +6652,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PBMRKFDK010926KAN001",
-    "modified": "2026-09-23 13:13:38.726926",
+    "modified": "2026-09-24 12:27:19.734225",
     "creation": "2026-09-01 12:53:05.193912"
   },
   "KCL::APSCSCLK010926KAN001": {
