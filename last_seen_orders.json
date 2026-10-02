@@ -7765,7 +7765,7 @@
     "month": "August-2026",
     "total_qty": 192,
     "total_pcso_quantity": 192,
-    "total_icall_quantity_in_bales": 144,
+    "total_icall_quantity_in_bales": 192,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 144,
     "rem_insp_qty": 0,
@@ -7796,7 +7796,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "UKFCSCAK130926KAL001",
-    "modified": "2026-09-30 19:00:13.292055",
+    "modified": "2026-10-02 17:15:52.950780",
     "creation": "2026-09-13 15:45:23.971763"
   },
   "Kaliaganj::CGMRKFDK130926KAL001": {
@@ -7921,7 +7921,7 @@
     "month": "August-2026",
     "total_qty": 912,
     "total_pcso_quantity": 912,
-    "total_icall_quantity_in_bales": 240,
+    "total_icall_quantity_in_bales": 480,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 240,
     "rem_insp_qty": 0,
@@ -7952,7 +7952,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010926KAL002",
-    "modified": "2026-09-30 20:08:37.110660",
+    "modified": "2026-10-02 17:27:00.694821",
     "creation": "2026-09-15 14:52:07.332775"
   },
   "KCL::PUNGRAINK010926KAN002": {
