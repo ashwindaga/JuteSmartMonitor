@@ -7297,7 +7297,7 @@
     "month": "September-2026",
     "total_qty": 1400,
     "total_pcso_quantity": 1400,
-    "total_icall_quantity_in_bales": 1100,
+    "total_icall_quantity_in_bales": 1400,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 1100,
     "rem_insp_qty": 0,
@@ -7328,7 +7328,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK130926KAN001",
-    "modified": "2026-10-01 16:40:39.375434",
+    "modified": "2026-10-02 14:43:58.778196",
     "creation": "2026-09-13 16:06:31.310525"
   },
   "KCL::CGMRKFDK130926KAN001": {
