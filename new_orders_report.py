@@ -68,7 +68,8 @@ def load_snapshot():
     return {}
 
 def save_snapshot(all_orders_by_mill):
-    snapshot = {}
+    # Merge into the existing snapshot so a mill that failed this run keeps its entries
+    snapshot = load_snapshot()
     for mill_name, orders in all_orders_by_mill.items():
         for o in orders:
             key = f"{mill_name}::{o['name']}"
@@ -106,7 +107,13 @@ def build_plain_text(mills_data, failed_mills):
         return "\n".join(lines)
 
     for mill_name, orders in mills_data:
-        lines.append(f"{mill_name} ({len(orders)} new order(s))")
+        total_bales = 0
+        for o in orders:
+            try:
+                total_bales += int(float(o.get("total_qty") or 0))
+            except (ValueError, TypeError):
+                pass
+        lines.append(f"{mill_name} ({len(orders)} new order(s) | {total_bales:,} bales total)")
         lines.append("-" * 30)
         for o in orders:
             lines.append(f"Customer: {fmt_val(o.get('indentor'))}")
