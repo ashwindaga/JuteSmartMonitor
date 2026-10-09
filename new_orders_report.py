@@ -13,6 +13,7 @@ MILLS = [
     {"name": "KJPL",      "username": os.environ["JUTECOMM_USERNAME_2"], "password": os.environ["JUTECOMM_PASSWORD_2"]},
     {"name": "Tepcon",    "username": os.environ["JUTECOMM_USERNAME_3"], "password": os.environ["JUTECOMM_PASSWORD_3"]},
     {"name": "Kaliaganj", "username": os.environ["JUTECOMM_USERNAME_4"], "password": os.environ["JUTECOMM_PASSWORD_4"]},
+    {"name": "GS",        "username": os.environ["JUTECOMM_USERNAME_5"], "password": os.environ["JUTECOMM_PASSWORD_5"]},
 ]
 
 GMAIL_SENDER = os.environ["GMAIL_SENDER"]

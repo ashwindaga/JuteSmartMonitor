@@ -38,6 +38,8 @@ jobs:
           JUTECOMM_PASSWORD_3:  ${{ secrets.JUTECOMM_PASSWORD_3 }}
           JUTECOMM_USERNAME_4:  ${{ secrets.JUTECOMM_USERNAME_4 }}
           JUTECOMM_PASSWORD_4:  ${{ secrets.JUTECOMM_PASSWORD_4 }}
+          JUTECOMM_USERNAME_5:  ${{ secrets.JUTECOMM_USERNAME_5 }}
+          JUTECOMM_PASSWORD_5:  ${{ secrets.JUTECOMM_PASSWORD_5 }}
           GMAIL_SENDER:         ${{ secrets.GMAIL_SENDER }}
           GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
           ALERT_EMAIL:          ${{ secrets.ALERT_EMAIL }}
