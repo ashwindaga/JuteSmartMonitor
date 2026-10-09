@@ -317,12 +317,19 @@ function cmp(m, a, b, key) {
   return va.localeCompare(vb, undefined, { numeric: true });  // ISO dates sort as text
 }
 
+function cmpDesc(m, a, b, key) {  // descending, but blanks still last
+  const va = valOf(m.rows[a], key), vb = valOf(m.rows[b], key);
+  if (!va && vb) return 1;
+  if (va && !vb) return -1;
+  return -cmp(m, a, b, key);
+}
+
 function sortedBills(m, bills) {
   const st = sortState[m.name];
   return bills.sort((a, b) => {
     if (st) { const c = cmp(m, a, b, st.key); return st.dir === "asc" ? c : -c; }
-    // default: stage (most actionable first), then oldest bill first
-    return cmp(m, a, b, "_STAGE") || cmp(m, a, b, "BILL_DATE") || cmp(m, a, b, "BILL");
+    // default: latest bill date first (blank dates last), then bill no. descending
+    return cmpDesc(m, a, b, "BILL_DATE") || -cmp(m, a, b, "BILL");
   });
 }
 
@@ -409,7 +416,7 @@ function tableHead(m) {
     i += span;
   }
   const cols = COLUMNS.map(c => {
-    const arrow = st && st.key === c.key ? (st.dir === "asc" ? "▲" : "▼") : "";
+    const arrow = st ? (st.key === c.key ? (st.dir === "asc" ? "▲" : "▼") : "") : (c.key === "BILL_DATE" ? "▼" : "");
     const cls = [c.sticky ? "sticky" : "", c.num ? "num" : ""].filter(Boolean).join(" ");
     return `<th data-mill="${esc(m.name)}" data-key="${c.key}"${cls ? ` class="${cls}"` : ""}>${c.label}<span class="arrow">${arrow}</span></th>`;
   }).join("");
@@ -480,7 +487,8 @@ $("main").addEventListener("click", e => {
   const th = e.target.closest("th[data-key]");
   if (th) {
     const { mill, key } = th.dataset, st = sortState[mill];
-    sortState[mill] = st && st.key === key ? { key, dir: st.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" };
+    const cur = st || { key: "BILL_DATE", dir: "desc" };  // the default order is bill date, newest first
+    sortState[mill] = cur.key === key ? { key, dir: cur.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" };
     render(); return;
   }
   const h = e.target.closest("[data-collapse]");
