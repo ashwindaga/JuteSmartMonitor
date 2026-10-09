@@ -499,10 +499,10 @@
   "DOCKET_DATE": "2026-10-07",
   "DOCKET_NO": "07-10-26/0052",
   "INOTE": "CGMRKFDK130926NAF001-0001-0001",
-  "L1_RECEIVED": "2026-10-07",
+  "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "2026-10-09 16:20",
+  "L1_VERIFIED": "",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -529,8 +529,8 @@
   "PCSO_NO": "CGMRKFDK130926NAF001",
   "QTY": "260",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-09 16:20:42.540684"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-07 15:55:44.034445"
  },
  "CGMRKFDK130926NAF001/BILL02": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -540,10 +540,10 @@
   "DOCKET_DATE": "2026-10-07",
   "DOCKET_NO": "07-10-26/0062",
   "INOTE": "CGMRKFDK130926NAF001-0002-0001",
-  "L1_RECEIVED": "2026-10-07",
+  "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "2026-10-09 16:10",
+  "L1_VERIFIED": "",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -570,8 +570,8 @@
   "PCSO_NO": "CGMRKFDK130926NAF001",
   "QTY": "130",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-09 16:10:22.363824"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-07 16:32:39.729798"
  },
  "CGMRKFDK140826NAF001/BILL01": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -831,10 +831,10 @@
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
   "L1_VERIFIED": "2026-10-09 15:14",
-  "L2_RECEIVED": "2026-10-06",
+  "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "2026-10-09 15:55",
+  "L2_VERIFIED": "",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -857,8 +857,8 @@
   "PCSO_NO": "CGMRKFDK140826NAF001",
   "QTY": "260",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 2",
-  "_modified": "2026-10-09 15:55:32.145963"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-09 15:14:39.247870"
  },
  "CGMRKFDK180626NAF001/BILL01": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -4694,12 +4694,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-08 15:19",
   "P1_AMT": "5740737",
-  "P1_DATE": "2026-10-09",
+  "P1_DATE": "",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "5740737",
+  "P1_PAID": "0",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "SBINR52026100945614031",
+  "P1_UTR": "",
   "P2_AMT": "617948",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -4712,7 +4712,7 @@
   "QTY": "96",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-09 16:07:54.683286"
+  "_modified": "2026-10-08 19:47:43.270790"
  },
  "PBMRKFDK240726NAF003/BILL01": {
   "AGENCY": "THE PUNJAB STATE CO-OPERATIVE SUPPLY & MARKETING FEDERATION LTD.",
@@ -5870,10 +5870,10 @@
   "DOCKET_DATE": "2026-10-08",
   "DOCKET_NO": "08-10-26/0049",
   "INOTE": "PUNGRAINK010926NAF001-0001-0003",
-  "L1_RECEIVED": "2026-10-08",
+  "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "2026-10-09 16:19",
+  "L1_VERIFIED": "",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -5900,8 +5900,8 @@
   "PCSO_NO": "PUNGRAINK010926NAF001",
   "QTY": "96",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-09 16:19:42.866706"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-08 17:18:31.979216"
  },
  "PUNGRAINK010926NAF001/BILL04": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -6293,12 +6293,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-08 17:12",
   "P1_AMT": "14351842",
-  "P1_DATE": "2026-10-09",
+  "P1_DATE": "",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "14351842",
+  "P1_PAID": "0",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "SBINR52026100945613957",
+  "P1_UTR": "",
   "P2_AMT": "1544870",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -6311,7 +6311,7 @@
   "QTY": "240",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-09 16:07:45.208068"
+  "_modified": "2026-10-08 19:47:51.439478"
  },
  "PUNSUPK150526NAF001/BILL01": {
   "AGENCY": "Punjab State Civil Supplies Corporation Limited",

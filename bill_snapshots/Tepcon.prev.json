@@ -958,10 +958,10 @@
   "L2_REJ_REASON": "Destination change Amdt. letter required.",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-09 14:44",
-  "L3_RECEIVED": "2026-09-30",
-  "L3_REJ_REASON": "As per the PCSO, the original destination for the consignment is \"CMS, Godown Gulab Nagar\". However, according to the attached Railway Receipt (RR) bill, the jute bags have been delivered to JHAJJÁR. Kindly enclose an amendment for change of the destination or the correct RR bill.",
+  "L3_RECEIVED": "",
+  "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "2026-10-09 15:32",
+  "L3_VERIFIED": "",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -980,8 +980,8 @@
   "PCSO_NO": "HAFEDK140826SHR001",
   "QTY": "260",
   "REJ_REASON": "",
-  "STATUS": "Rejected By Level 3",
-  "_modified": "2026-10-09 15:32:34.380025"
+  "STATUS": "L2 Rejected - L3 Pending",
+  "_modified": "2026-10-09 14:44:26.308459"
  },
  "HAFEDK190626SHR001/BILL01": {
   "AGENCY": "The Haryana State Cooperative Supply & Marketing Federation Ltd.",
@@ -3874,12 +3874,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-08 11:44",
   "P1_AMT": "4883575",
-  "P1_DATE": "2026-10-09",
+  "P1_DATE": "",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "4883575",
+  "P1_PAID": "0",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "SBINR52026100945614075",
+  "P1_UTR": "",
   "P2_AMT": "504228",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -3892,7 +3892,7 @@
   "QTY": "96",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-09 16:07:43.699327"
+  "_modified": "2026-10-08 19:47:49.254062"
  },
  "PUNGRAINK010926SHR001/BILL05": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -3915,12 +3915,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-08 15:16",
   "P1_AMT": "4876164",
-  "P1_DATE": "2026-10-09",
+  "P1_DATE": "",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "4876164",
+  "P1_PAID": "0",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "SBINR52026100945614076",
+  "P1_UTR": "",
   "P2_AMT": "504228",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -3933,7 +3933,7 @@
   "QTY": "96",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-09 16:07:43.890503"
+  "_modified": "2026-10-08 19:47:49.527072"
  },
  "PUNGRAINK010926SHR001/BILL06": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -3956,12 +3956,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-08 13:43",
   "P1_AMT": "4875692",
-  "P1_DATE": "2026-10-09",
+  "P1_DATE": "",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "4875692",
+  "P1_PAID": "0",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "SBINR52026100945614018",
+  "P1_UTR": "",
   "P2_AMT": "504228",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -3974,7 +3974,7 @@
   "QTY": "96",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-09 16:07:44.082322"
+  "_modified": "2026-10-08 19:47:49.794096"
  },
  "PUNGRAINK010926SHR001/BILL07": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -3992,10 +3992,10 @@
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-09 12:26",
-  "L3_RECEIVED": "2026-10-01",
+  "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "2026-10-09 15:56",
+  "L3_VERIFIED": "",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -4014,8 +4014,8 @@
   "PCSO_NO": "PUNGRAINK010926SHR001",
   "QTY": "48",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-09 15:56:20.004339"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-09 12:26:22.788151"
  },
  "PUNGRAINK010926SHR001/BILL08": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -4038,12 +4038,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-08 15:28",
   "P1_AMT": "9751386",
-  "P1_DATE": "2026-10-09",
+  "P1_DATE": "",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "9751386",
+  "P1_PAID": "0",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "SBINR52026100945614040",
+  "P1_UTR": "",
   "P2_AMT": "1008456",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -4056,7 +4056,7 @@
   "QTY": "192",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-09 16:07:44.284109"
+  "_modified": "2026-10-08 19:47:50.055950"
  },
  "PUNGRAINK010926SHR001/BILL09": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
