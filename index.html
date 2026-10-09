@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bill Status Monitor</title>
+<style>
+  :root {
+    --bg: #f4f6f9; --card: #ffffff; --head: #2c5530; --border: #e1e6ed;
+    --text: #1f2937; --muted: #6b7280; --row-alt: #fafbfc; --accent: #2563eb;
+    --green: #1e7e34; --green-bg: #e6f4ea;
+    --amber: #a15c00; --amber-bg: #fff4e0;
+    --red: #c62828; --red-bg: #fdecec;
+    --blue: #1d4ed8; --blue-bg: #e8effd;
+    --teal: #0f766e; --teal-bg: #e0f2f1;
+    --grey-bg: #eef0f3;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+         background: var(--bg); color: var(--text); font-size: 14px; }
+  header { background: var(--head); color: #fff; padding: 16px 24px; display: flex;
+           align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  header h1 { margin: 0; font-size: 19px; font-weight: 600; }
+  header .meta { font-size: 12.5px; color: #d3e5d5; margin-top: 3px; }
+  header .meta b { color: #fff; font-weight: 600; }
+  header .right { display: flex; align-items: center; gap: 14px; }
+  header a.other { color: #d3e5d5; font-size: 13px; text-decoration: none; }
+  header a.other:hover { color: #fff; text-decoration: underline; }
+  .stale { color: #ffd38a !important; }
+  #refreshBtn { background: #fff; color: var(--head); border: none; padding: 9px 18px; border-radius: 6px;
+                font-weight: 600; font-size: 13.5px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+  #refreshBtn:hover { background: #eef5ef; }
+  #refreshBtn:disabled { opacity: .6; cursor: wait; }
+  #refreshBtn svg { width: 15px; height: 15px; }
+  .spin { animation: spin .9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .wrap { max-width: 1600px; margin: 0 auto; padding: 0 20px; }
+  .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 16px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;
+          cursor: pointer; transition: border-color .15s; }
+  .card:hover { border-color: #b9c3d0; }
+  .card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .card .num { font-size: 22px; font-weight: 700; }
+  .card .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .card.c-paid .num { color: var(--green); } .card.c-rej .num { color: var(--red); }
+  .card.c-ready .num { color: var(--blue); } .card.c-p1 .num { color: var(--teal); }
+  .card.c-chg .num { color: var(--amber); }
+
+  .controls { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .controls input { flex: 1; min-width: 220px; padding: 9px 12px; border: 1px solid var(--border);
+                    border-radius: 6px; font-size: 14px; }
+  .controls select { padding: 9px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13.5px; background: #fff; }
+  .clear { font-size: 12.5px; color: var(--accent); cursor: pointer; display: none; }
+
+  main { margin-top: 16px; margin-bottom: 50px; }
+  .mill { background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .mill-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+               padding: 12px 16px; background: #f7f9fc; border-bottom: 1px solid var(--border); cursor: pointer; }
+  .mill-head h2 { margin: 0; font-size: 15.5px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .mill-head .sub { font-size: 12px; color: var(--muted); }
+  .mill-head .caret { font-size: 11px; color: var(--muted); transition: transform .15s; }
+  .mill.collapsed .caret { transform: rotate(-90deg); }
+  .mill.collapsed .body { display: none; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+  .b-ok { background: var(--grey-bg); color: var(--text); }
+  .b-err { background: var(--red-bg); color: var(--red); }
+  .b-chg { background: var(--amber-bg); color: var(--amber); }
+  .err-note { padding: 8px 16px; background: var(--red-bg); color: var(--red); font-size: 12.5px; border-bottom: 1px solid var(--border); }
+
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; white-space: nowrap; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; font-size: 13px; }
+  thead tr.groups th { cursor: default; text-align: center; border-bottom: none; padding-bottom: 2px; color: #4b5563; }
+  thead tr.groups th.g { border-left: 1px solid var(--border); border-right: 1px solid var(--border); background: #f5f7fa; }
+  th { background: #fbfcfd; font-size: 11px; text-transform: uppercase; letter-spacing: .3px; color: var(--muted);
+       cursor: pointer; user-select: none; }
+  th:hover { color: var(--text); }
+  th.num, td.num { text-align: right; }
+  th .arrow { font-size: 9px; margin-left: 3px; }
+  tbody tr:nth-child(odd) { background: var(--row-alt); }
+  td.sticky, th.sticky { position: sticky; left: 0; background: inherit; z-index: 1; }
+  th.sticky { background: #fbfcfd; }
+  tbody tr td.sticky { background: #fff; }
+  tbody tr:nth-child(odd) td.sticky { background: var(--row-alt); }
+  tr.row-new td.sticky { box-shadow: inset 3px 0 0 var(--green); }
+  tr.row-chg td.sticky { box-shadow: inset 3px 0 0 var(--amber); }
+  .bill { font-weight: 600; color: inherit; text-decoration: none; }
+  a.bill:hover { color: var(--accent); text-decoration: underline; }
+
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .st-rej { background: var(--red-bg); color: var(--red); }
+  .st-hold { background: var(--red-bg); color: var(--red); }
+  .st-ready { background: var(--blue-bg); color: var(--blue); }
+  .st-p1 { background: var(--teal-bg); color: var(--teal); }
+  .st-paid { background: var(--green-bg); color: var(--green); }
+  .st-wait { background: var(--grey-bg); color: #374151; }
+  .chg-ring { box-shadow: 0 0 0 2px var(--amber); }
+  .paid-date { color: var(--green); font-weight: 600; }
+  .dash { color: #b0b6bf; }
+  .reason { color: var(--red); font-size: 12px; white-space: normal; max-width: 280px; margin-top: 4px; line-height: 1.35; }
+  .unpaid { color: var(--muted); font-size: 12px; }
+  td.num .paid-date { font-size: 12px; }
+  .chg { background: var(--amber-bg); color: var(--amber); border-radius: 4px; padding: 1px 5px; }
+  .tag-new { background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700;
+             padding: 1px 5px; border-radius: 4px; margin-left: 6px; }
+  .empty { padding: 22px; text-align: center; color: var(--muted); font-size: 13.5px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 0 20px 28px; line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    header { padding: 14px 16px; } header h1 { font-size: 16px; }
+    .wrap { padding: 0 12px; }
+    .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Bill Status Monitor</h1>
+    <div class="meta" id="meta">Loading…</div>
+  </div>
+  <div class="right">
+    <a class="other" href="https://ashwindaga.github.io/arrear-bill-monitor/">Arrear bills →</a>
+    <button id="refreshBtn" type="button">
+      <svg id="refreshIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+      </svg>
+      <span id="refreshLabel">Refresh</span>
+    </button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="summary" id="summary"></div>
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search bill no., docket no., customer, PCSO, reason…" />
+    <select id="millSelect"><option value="">All mills</option></select>
+    <span class="clear" id="clearBtn">Clear filters</span>
+  </div>
+  <main id="main"><div class="empty">Loading mill data…</div></main>
+</div>
+
+<footer>
+  Bills are read from the JuteSmart portal (Bill Generation → Bill Processing) every 30 minutes, 9am–9pm, Monday–Saturday.<br>
+  The time of the last check is shown at the top. <b>Refresh</b> reloads this page; it does not re-check the portal.<br>
+  <span style="color:var(--green)">▍</span> new bill &nbsp; <span style="color:var(--amber)">▍</span> changed in the latest update (changed values highlighted; hover to see the old value)
+</footer>
+
+<script>
+const PORTAL = "https://smart.jutecomm.gov.in/app/invoice-generation-by-mill/";
+const DIR = "bill_snapshots";
+
+// group: column group label for the two-row header
+const COLUMNS = [
+  { key: "BILL", label: "Bill No.", sticky: true },
+  { key: "_STAGE", label: "Stage" },
+  { key: "BILL_DATE", label: "Bill Date", date: true },
+  { key: "CUSTOMER", label: "Customer" },
+  { key: "QTY", label: "Qty (bales)", num: true },
+  { key: "DOCKET_NO", label: "Docket No" },
+  { key: "L1_VERIFIED", label: "Level 1", date: true, dayOnly: true, group: "Verified on" },
+  { key: "L2_VERIFIED", label: "Level 2", date: true, dayOnly: true, group: "Verified on" },
+  { key: "L3_VERIFIED", label: "Level 3", date: true, dayOnly: true, group: "Verified on" },
+  { key: "_P1", label: "Phase 1 (₹)", num: true, group: "Payment" },
+  { key: "_P2", label: "Phase 2 (₹)", num: true, group: "Payment" },
+];
+// fields compared for "changed" highlighting (everything the record holds except bookkeeping)
+const SKIP_DIFF = k => k.startsWith("_");
+
+const STAGES = {
+  rej:   { rank: 0, cls: "st-rej",   card: "Rejected",                 c: "c-rej" },
+  hold:  { rank: 1, cls: "st-hold",  card: "On hold",                  c: "c-rej" },
+  ready: { rank: 2, cls: "st-ready", card: "Approved, awaiting payment", c: "c-ready" },
+  p1:    { rank: 3, cls: "st-p1",    card: "Phase 1 paid",             c: "c-p1" },
+  l3:    { rank: 4, cls: "st-wait",  card: "Awaiting L3" },
+  l2:    { rank: 5, cls: "st-wait",  card: "Awaiting L2" },
+  l1:    { rank: 6, cls: "st-wait",  card: "Awaiting L1" },
+  paid:  { rank: 7, cls: "st-paid",  card: "Fully paid",               c: "c-paid" },
+};
+
+let status = null, mills = [], sortState = {}, collapsed = {}, filter = "";
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const num = v => { const n = parseFloat(v); return isNaN(n) ? 0 : n; };
+
+function phasePaid(r, n) {
+  if ((r[`P${n}_DATE`] || "").trim()) return true;
+  const amt = num(r[`P${n}_AMT`]);
+  return amt > 0 && num(r[`P${n}_PAID`]) >= amt;
+}
+const hasPhase = (r, n) => !!(r[`P${n}_AMT`] || r[`P${n}_PCT`]);
+const phaseHeld = r => [1, 2].some(n => /hold|withh/i.test(r[`P${n}_HOLD`] || "") && !/clear|releas/i.test(r[`P${n}_HOLD`] || ""));
+
+function stageOf(r) {
+  const st = r.STATUS || "";
+  if (/reject/i.test(st)) return { id: "rej", text: st };
+  if (/hold/i.test(st) || phaseHeld(r)) return { id: "hold", text: "On hold" };
+  const p1 = hasPhase(r, 1) && phasePaid(r, 1);
+  const p2 = hasPhase(r, 2) ? phasePaid(r, 2) : p1;
+  if (p1 && p2) return { id: "paid", text: "Fully paid" };
+  if (p1) return { id: "p1", text: "Phase 1 paid, Phase 2 due" };
+  let lvl = 0;
+  const m = /level\s*(\d)/i.exec(st);
+  if (m) lvl = +m[1];
+  else lvl = r.L3_VERIFIED ? 3 : r.L2_VERIFIED ? 2 : r.L1_VERIFIED ? 1 : 0;
+  if (lvl >= 3) return { id: "ready", text: "Approved – awaiting payment" };
+  if (lvl === 2) return { id: "l3", text: "Awaiting L3" };
+  if (lvl === 1) return { id: "l2", text: "Awaiting L2" };
+  return { id: "l1", text: "Awaiting L1" };
+}
+
+function reasonOf(r) {
+  for (const k of ["L3_REJ_REASON", "L2_REJ_REASON", "L1_REJ_REASON", "REJ_REASON"]) if ((r[k] || "").trim()) return r[k];
+  return "";
+}
+
+function fmtDate(s) {  // "2026-09-24" or "2026-09-24 13:12" -> "24-09-2026" / "24-09-2026 13:12"
+  const m = /^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}:\d{2}))?/.exec((s || "").trim());
+  return m ? `${m[3]}-${m[2]}-${m[1]}${m[4] ? " " + m[4] : ""}` : s;
+}
+const inr = n => Number(n).toLocaleString("en-IN", { maximumFractionDigits: 2 });
+
+function fmtTime(iso) {
+  if (!iso) return "—";
+  return new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short",
+                                                hour: "numeric", minute: "2-digit" });
+}
+function ago(iso) {
+  if (!iso) return "";
+  const mins = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins} min ago`;
+  const h = Math.round(mins / 60);
+  if (h < 24) return `${h} hr${h > 1 ? "s" : ""} ago`;
+  const d = Math.round(h / 24);
+  return `${d} day${d > 1 ? "s" : ""} ago`;
+}
+
+async function getJson(path) {
+  const res = await fetch(`${path}?t=${Date.now()}`, { cache: "no-store" });
+  if (!res.ok) throw new Error(res.status === 404 ? "no data yet" : `HTTP ${res.status}`);
+  return res.json();
+}
+
+async function load() {
+  const btn = $("refreshBtn");
+  btn.disabled = true; $("refreshIcon").classList.add("spin"); $("refreshLabel").textContent = "Refreshing…";
+  try { status = await getJson(`${DIR}/status.json`); } catch { status = null; }
+  const entries = status && status.mills ? Object.entries(status.mills).sort((a, b) => a[0].localeCompare(b[0])) : [];
+
+  mills = await Promise.all(entries.map(async ([name, ms]) => {
+    const file = ms.file || name;
+    try {
+      const rows = await getJson(`${DIR}/${encodeURIComponent(file)}.json`);
+      let prev = null;
+      try { prev = await getJson(`${DIR}/${encodeURIComponent(file)}.prev.json`); } catch {}
+      return { name, rows, prev, error: null };
+    } catch (e) {
+      return { name, rows: {}, prev: null, error: e.message };
+    }
+  }));
+
+  const sel = $("millSelect"), cur = sel.value;
+  sel.innerHTML = '<option value="">All mills</option>' +
+    mills.map(m => `<option value="${esc(m.name)}">${esc(m.name)}</option>`).join("");
+  sel.value = mills.some(m => m.name === cur) ? cur : "";
+
+  renderMeta();
+  render();
+  btn.disabled = false; $("refreshIcon").classList.remove("spin"); $("refreshLabel").textContent = "Refresh";
+}
+
+function renderMeta() {
+  if (!status || !status.last_checked) {
+    $("meta").textContent = "No portal check has run yet";
+    return;
+  }
+  const mins = (Date.now() - new Date(status.last_checked)) / 60000;
+  const stale = mins > 8 * 60;
+  $("meta").innerHTML = `JuteSmart bill approval and payment status · last checked <b>${fmtTime(status.last_checked)}</b> (${ago(status.last_checked)})` +
+    (stale ? ' <span class="stale">· no check for over 8 hours</span>' : "");
+}
+
+// --- change detection against the previous snapshot ---
+const isNew = (m, b) => !!m.prev && !(b in m.prev);
+const valOf = (r, k) => k === "_REASON" ? reasonOf(r)
+  : k === "_P1" || k === "_P2" ? (r[`P${k[2]}_AMT`] ? `${r[`P${k[2]}_AMT`]}|${r[`P${k[2]}_DATE`] || ""}` : "")
+  : (r[k] || "");
+const fieldChanged = (m, b, k) => !!m.prev && b in m.prev && valOf(m.prev[b], k) !== valOf(m.rows[b], k);
+const rowChanged = (m, b) => !!m.prev && b in m.prev &&
+  Object.keys({ ...m.rows[b], ...m.prev[b] }).some(k => !SKIP_DIFF(k) && (m.prev[b][k] || "") !== (m.rows[b][k] || ""));
+
+function matches(m, b, q) {
+  const r = m.rows[b];
+  if (filter === "changed" && !(isNew(m, b) || rowChanged(m, b))) return false;
+  if (filter && filter !== "changed" && stageOf(r).id !== filter) return false;
+  if (q) {
+    const hay = (Object.values(r).join(" ") + " " + stageOf(r).text + " " + fmtDate(r.BILL_DATE)).toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function cmp(m, a, b, key) {
+  if (key === "_STAGE") return STAGES[stageOf(m.rows[a]).id].rank - STAGES[stageOf(m.rows[b]).id].rank;
+  const col = COLUMNS.find(c => c.key === key) || {};
+  const va = valOf(m.rows[a], key), vb = valOf(m.rows[b], key);
+  if (!va && vb) return 1;             // blanks always last
+  if (va && !vb) return -1;
+  if (col.num) return num(va.split("|")[0]) - num(vb.split("|")[0]);
+  return va.localeCompare(vb, undefined, { numeric: true });  // ISO dates sort as text
+}
+
+function sortedBills(m, bills) {
+  const st = sortState[m.name];
+  return bills.sort((a, b) => {
+    if (st) { const c = cmp(m, a, b, st.key); return st.dir === "asc" ? c : -c; }
+    // default: stage (most actionable first), then oldest bill first
+    return cmp(m, a, b, "_STAGE") || cmp(m, a, b, "BILL_DATE") || cmp(m, a, b, "BILL");
+  });
+}
+
+function cell(m, b, col) {
+  const r = m.rows[b];
+  if (col.key === "_STAGE") {
+    const s = stageOf(r);
+    let tip = r.STATUS && r.STATUS !== s.text ? `Portal status: ${r.STATUS}` : "";
+    let ring = "";
+    if (fieldChanged(m, b, "STATUS")) { ring = " chg-ring"; tip = `Was: ${m.prev[b].STATUS || "blank"}` + (tip ? ` · ${tip}` : ""); }
+    const why = reasonOf(r);
+    const whyHtml = why && (s.id === "rej" || s.id === "hold")
+      ? `<div class="reason${fieldChanged(m, b, "_REASON") ? " chg" : ""}">${esc(why)}</div>` : "";
+    return `<td${tip ? ` title="${esc(tip)}"` : ""}><span class="pill ${STAGES[s.id].cls}${ring}">${esc(s.text)}</span>${whyHtml}</td>`;
+  }
+  const v = valOf(r, col.key).trim();
+  let html, title = "";
+  if (!v) html = '<span class="dash">—</span>';
+  else if (col.key === "_P1" || col.key === "_P2") {
+    const n = col.key[2], amt = r[`P${n}_AMT`], dt = r[`P${n}_DATE`];
+    html = `${inr(amt)}<div class="${dt ? "paid-date" : "unpaid"}">${dt ? "Paid " + esc(fmtDate(dt)) : phasePaid(r, n) ? "Paid" : "Not paid"}</div>`;
+  }
+  else if (col.key === "_REASON") html = `<span class="reason">${esc(v)}</span>`;
+  else if (col.date) {
+    const d = col.dayOnly ? fmtDate(v).slice(0, 10) : fmtDate(v);
+    html = col.paid ? `<span class="paid-date">${esc(d)}</span>` : esc(d);
+  }
+  else if (col.num && !isNaN(parseFloat(v))) html = inr(v);
+  else html = esc(v);
+
+  if (/^L\d_VERIFIED$/.test(col.key)) {
+    const n = col.key[1], rec = r[`L${n}_RECEIVED`];
+    title = [v ? `Verified ${fmtDate(v)}` : "", rec ? `Received ${fmtDate(rec)}` : ""].filter(Boolean).join(" · ");
+  }
+  if (col.key === "DOCKET_NO" && r.DOCKET_DATE) title = `Received ${fmtDate(r.DOCKET_DATE)}`;
+  if (col.key === "_P1" || col.key === "_P2") {
+    const n = col.key[2], pct = r[`P${n}_PCT`];
+    if (pct) title = `${num(pct)}% of bill` + (r[`P${n}_UTR`] ? ` · UTR ${r[`P${n}_UTR`]}` : "");
+  }
+
+  if (col.key === "BILL") {
+    html = `<a class="bill" href="${PORTAL}${encodeURIComponent(b)}" target="_blank" rel="noopener">${html}</a>` +
+           (isNew(m, b) ? '<span class="tag-new">NEW</span>' : "");
+  } else if (fieldChanged(m, b, col.key)) {
+    const old = valOf(m.prev[b], col.key);
+    const oldTxt = !old ? "blank" : col.key.startsWith("_P") ? (() => { const [a, d] = old.split("|"); return inr(a) + (d ? `, paid ${fmtDate(d)}` : ", not paid"); })()
+      : col.date ? fmtDate(old) : col.num && !isNaN(parseFloat(old)) ? inr(old) : old;
+    html = `<span class="chg">${html}</span>`;
+    title = `Was: ${oldTxt}` + (title ? ` · ${title}` : "");
+  }
+  const cls = [col.sticky ? "sticky" : "", col.num ? "num" : ""].filter(Boolean).join(" ");
+  return `<td${cls ? ` class="${cls}"` : ""}${title ? ` title="${esc(title)}"` : ""}>${html}</td>`;
+}
+
+function renderSummary(visibleMills) {
+  const counts = { total: 0, changed: 0 };
+  for (const id in STAGES) counts[id] = 0;
+  for (const m of visibleMills) for (const b in m.rows) {
+    counts.total++;
+    counts[stageOf(m.rows[b]).id]++;
+    if (isNew(m, b) || rowChanged(m, b)) counts.changed++;
+  }
+  const order = ["rej", "hold", "l1", "l2", "l3", "ready", "p1", "paid"];
+  const cards = [{ id: "", num: counts.total, lbl: "All bills" }]
+    .concat(order.filter(id => id !== "hold" || counts.hold || filter === "hold")
+      .map(id => ({ id, num: counts[id], lbl: STAGES[id].card, cls: STAGES[id].c || "" })))
+    .concat([{ id: "changed", num: counts.changed, lbl: "Changed in latest update", cls: "c-chg" }]);
+  $("summary").innerHTML = cards.map(c =>
+    `<div class="card ${c.cls || ""} ${filter === c.id ? "active" : ""}" data-filter="${c.id}">
+       <div class="num">${c.num}</div><div class="lbl">${c.lbl}</div></div>`).join("");
+}
+
+function tableHead(m) {
+  const st = sortState[m.name];
+  // first row: group labels spanning their columns
+  let groups = "", i = 0;
+  while (i < COLUMNS.length) {
+    const g = COLUMNS[i].group;
+    let span = 1;
+    while (i + span < COLUMNS.length && g && COLUMNS[i + span].group === g) span++;
+    groups += g ? `<th class="g" colspan="${span}">${esc(g)}</th>`
+                : `<th${COLUMNS[i].sticky ? ' class="sticky"' : ""}></th>`;
+    i += span;
+  }
+  const cols = COLUMNS.map(c => {
+    const arrow = st && st.key === c.key ? (st.dir === "asc" ? "▲" : "▼") : "";
+    const cls = [c.sticky ? "sticky" : "", c.num ? "num" : ""].filter(Boolean).join(" ");
+    return `<th data-mill="${esc(m.name)}" data-key="${c.key}"${cls ? ` class="${cls}"` : ""}>${c.label}<span class="arrow">${arrow}</span></th>`;
+  }).join("");
+  return `<tr class="groups">${groups}</tr><tr>${cols}</tr>`;
+}
+
+function render() {
+  const q = $("search").value.trim().toLowerCase();
+  const only = $("millSelect").value;
+  const visible = mills.filter(m => !only || m.name === only);
+  renderSummary(visible);
+  $("clearBtn").style.display = (q || only || filter) ? "inline" : "none";
+
+  if (!mills.length) {
+    $("main").innerHTML = '<div class="empty">No bill data yet. It appears after the first portal check runs.</div>';
+    return;
+  }
+
+  $("main").innerHTML = visible.map(m => {
+    const ms = (status && status.mills && status.mills[m.name]) || {};
+    const total = Object.keys(m.rows).length;
+    const nChg = Object.keys(m.rows).filter(b => isNew(m, b) || rowChanged(m, b)).length;
+    const bills = sortedBills(m, Object.keys(m.rows).filter(b => matches(m, b, q)));
+
+    let badges = `<span class="badge b-ok">${total} bill${total === 1 ? "" : "s"}</span>`;
+    if (nChg) badges += ` <span class="badge b-chg">${nChg} changed</span>`;
+    if (m.error || ms.ok === false) badges += ` <span class="badge b-err">last check failed</span>`;
+    const sub = ms.last_changed ? `Last change ${fmtTime(ms.last_changed)} (${ago(ms.last_changed)})`
+              : ms.last_success ? "No changes since tracking began" : "";
+
+    const errNote = ms.ok === false ? `<div class="err-note">The latest portal check for this mill failed${
+          ms.last_success ? `, so the data below is from ${fmtTime(ms.last_success)}` : total ? ", so the data below may be out of date" : ""}.
+          ${ms.error ? "Reason: " + esc(ms.error.slice(0, 160)) : ""}</div>`
+      : m.error ? `<div class="err-note">Couldn't load this mill's data: ${esc(m.error)}</div>` : "";
+
+    let body;
+    if (!total) body = (m.error || ms.ok === false) ? "" : `<div class="empty">No bills for this mill on the portal.</div>`;
+    else if (!bills.length) body = `<div class="empty">No bills match the current filter.</div>`;
+    else {
+      const rows = bills.map(b => {
+        const rc = isNew(m, b) ? "row-new" : rowChanged(m, b) ? "row-chg" : "";
+        return `<tr class="${rc}">${COLUMNS.map(c => cell(m, b, c)).join("")}</tr>`;
+      }).join("");
+      body = `<div class="table-wrap"><table><thead>${tableHead(m)}</thead><tbody>${rows}</tbody></table></div>`;
+    }
+
+    return `<section class="mill ${collapsed[m.name] ? "collapsed" : ""}">
+      <div class="mill-head" data-collapse="${esc(m.name)}">
+        <h2>${esc(m.name)} ${badges}</h2>
+        <span><span class="sub">${sub}</span> <span class="caret">▼</span></span>
+      </div>
+      <div class="body">${errNote}${body}</div>
+    </section>`;
+  }).join("") || '<div class="empty">No mills to show.</div>';
+}
+
+// --- events ---
+$("refreshBtn").addEventListener("click", load);
+$("search").addEventListener("input", render);
+$("millSelect").addEventListener("change", render);
+$("clearBtn").addEventListener("click", () => { $("search").value = ""; $("millSelect").value = ""; filter = ""; render(); });
+$("summary").addEventListener("click", e => {
+  const c = e.target.closest(".card"); if (!c) return;
+  filter = filter === c.dataset.filter ? "" : c.dataset.filter; render();
+});
+$("main").addEventListener("click", e => {
+  if (e.target.closest("a")) return;
+  const th = e.target.closest("th[data-key]");
+  if (th) {
+    const { mill, key } = th.dataset, st = sortState[mill];
+    sortState[mill] = st && st.key === key ? { key, dir: st.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" };
+    render(); return;
+  }
+  const h = e.target.closest("[data-collapse]");
+  if (h) { collapsed[h.dataset.collapse] = !collapsed[h.dataset.collapse]; render(); }
+});
+
+load();
+setInterval(load, 10 * 60 * 1000);  // auto-reload every 10 minutes for screens left open
+</script>
+</body>
+</html>
