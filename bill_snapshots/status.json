@@ -1,42 +1,44 @@
 {
- "last_checked": "2026-10-09T10:50:49+00:00",
+ "last_checked": "2026-10-09T16:57:41+00:00",
  "mills": {
   "GS": {
    "bills": 103,
    "error": null,
    "file": "GS",
-   "last_success": "2026-10-09T10:50:49+00:00",
+   "last_changed": "2026-10-09T16:57:41+00:00",
+   "last_success": "2026-10-09T16:57:41+00:00",
    "ok": true
   },
   "KCL": {
    "bills": 43,
    "error": null,
    "file": "KCL",
-   "last_changed": "2026-10-09T10:50:49+00:00",
-   "last_success": "2026-10-09T10:50:49+00:00",
+   "last_changed": "2026-10-09T16:57:41+00:00",
+   "last_success": "2026-10-09T16:57:41+00:00",
    "ok": true
   },
   "KJPL": {
    "bills": 214,
    "error": null,
    "file": "KJPL",
-   "last_changed": "2026-10-09T10:50:49+00:00",
-   "last_success": "2026-10-09T10:50:49+00:00",
+   "last_changed": "2026-10-09T16:57:41+00:00",
+   "last_success": "2026-10-09T16:57:41+00:00",
    "ok": true
   },
   "Kaliaganj": {
    "bills": 60,
    "error": null,
    "file": "Kaliaganj",
-   "last_success": "2026-10-09T10:50:49+00:00",
+   "last_changed": "2026-10-09T16:57:41+00:00",
+   "last_success": "2026-10-09T16:57:41+00:00",
    "ok": true
   },
   "Tepcon": {
    "bills": 153,
    "error": null,
    "file": "Tepcon",
-   "last_changed": "2026-10-09T10:50:49+00:00",
-   "last_success": "2026-10-09T10:50:49+00:00",
+   "last_changed": "2026-10-09T16:57:41+00:00",
+   "last_success": "2026-10-09T16:57:41+00:00",
    "ok": true
   }
  }
