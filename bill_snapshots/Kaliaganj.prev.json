@@ -1401,10 +1401,10 @@
   "DOCKET_DATE": "2026-10-08",
   "DOCKET_NO": "08-10-26/0034",
   "INOTE": "PUNGRAINK010926KAL001-0001-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-08",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-12 13:12",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -1431,8 +1431,8 @@
   "PCSO_NO": "PUNGRAINK010926KAL001",
   "QTY": "192",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-08 15:24:08.808143"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-12 13:12:44.993750"
  },
  "PUNGRAINK150526KAL001/BILL01": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -1860,10 +1860,10 @@
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-09 17:03",
-  "L3_RECEIVED": "",
+  "L3_RECEIVED": "2026-10-06",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-10-12 15:50",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -1882,8 +1882,8 @@
   "PCSO_NO": "UKFCSCAK130926KAL001",
   "QTY": "144",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 2",
-  "_modified": "2026-10-09 17:03:55.744139"
+  "STATUS": "Approved By Level 3",
+  "_modified": "2026-10-12 15:50:29.546479"
  },
  "UPFCSR100426KAL001/BILL01": {
   "AGENCY": "Food & Civil Supplies Department Uttar Pradesh",
