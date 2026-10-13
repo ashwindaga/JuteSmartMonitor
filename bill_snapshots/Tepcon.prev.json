@@ -1077,10 +1077,10 @@
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
   "L1_VERIFIED": "2026-10-12 16:13",
-  "L2_RECEIVED": "",
+  "L2_RECEIVED": "2026-10-12",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-13 11:36",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -1103,8 +1103,8 @@
   "PCSO_NO": "HAFEDK140826SHR001",
   "QTY": "260",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-12 16:13:39.818278"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-13 11:36:19.297202"
  },
  "HAFEDK190626SHR001/BILL01": {
   "AGENCY": "The Haryana State Cooperative Supply & Marketing Federation Ltd.",
@@ -1655,10 +1655,10 @@
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-12 17:18",
-  "L3_RECEIVED": "",
+  "L3_RECEIVED": "2026-10-08",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-10-13 14:36",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -1677,8 +1677,8 @@
   "PCSO_NO": "MPSCSCK010826SHR006",
   "QTY": "144",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 2",
-  "_modified": "2026-10-12 17:18:02.922445"
+  "STATUS": "Approved By Level 3",
+  "_modified": "2026-10-13 14:36:38.825322"
  },
  "MPSCSCK010826SHR007/BILL01": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -1856,10 +1856,10 @@
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
   "L1_VERIFIED": "2026-10-12 16:31",
-  "L2_RECEIVED": "",
+  "L2_RECEIVED": "2026-10-08",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-13 11:23",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -1882,8 +1882,8 @@
   "PCSO_NO": "MPSCSCK130926SHR003",
   "QTY": "432",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-12 16:31:19.562643"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-13 11:23:35.792524"
  },
  "ODSCSCK180326SHR001/BILL01": {
   "AGENCY": "Odisha State Civil Supplies Corporation Ltd.",
@@ -5296,10 +5296,10 @@
   "DOCKET_DATE": "2026-10-12",
   "DOCKET_NO": "12-10-26/0022",
   "INOTE": "TGSCSCLK130926SHR002-0002-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-12",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-13 13:30",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -5326,8 +5326,8 @@
   "PCSO_NO": "TGSCSCLK130926SHR002",
   "QTY": "300",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-12 12:42:32.378043"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-13 13:30:04.614935"
  },
  "TGSCSCLK140826SHR002/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
