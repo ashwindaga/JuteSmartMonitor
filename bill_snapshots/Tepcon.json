@@ -1901,10 +1901,10 @@
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-13 11:23",
-  "L3_RECEIVED": "",
+  "L3_RECEIVED": "2026-10-08",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-10-14 11:52",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -1923,8 +1923,8 @@
   "PCSO_NO": "MPSCSCK130926SHR003",
   "QTY": "432",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 2",
-  "_modified": "2026-10-13 11:23:35.792524"
+  "STATUS": "Approved By Level 3",
+  "_modified": "2026-10-14 11:52:10.742437"
  },
  "ODSCSCK180326SHR001/BILL01": {
   "AGENCY": "Odisha State Civil Supplies Corporation Ltd.",
@@ -5341,10 +5341,10 @@
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
   "L1_VERIFIED": "2026-10-13 13:30",
-  "L2_RECEIVED": "",
+  "L2_RECEIVED": "2026-10-12",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-14 10:46",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -5367,8 +5367,8 @@
   "PCSO_NO": "TGSCSCLK130926SHR002",
   "QTY": "300",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-13 13:30:04.614935"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-14 10:46:34.982857"
  },
  "TGSCSCLK140826SHR002/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",

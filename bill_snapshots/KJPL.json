@@ -2143,10 +2143,10 @@
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
   "L1_VERIFIED": "2026-10-13 16:52",
-  "L2_RECEIVED": "",
+  "L2_RECEIVED": "2026-10-12",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-14 10:33",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -2169,8 +2169,8 @@
   "PCSO_NO": "MPSCSCK130926NAF001",
   "QTY": "432",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-13 16:52:47.276644"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-14 10:33:09.142108"
  },
  "ODSCSCK180326NAF001/BILL01": {
   "AGENCY": "Odisha State Civil Supplies Corporation Ltd.",
@@ -5919,10 +5919,10 @@
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-13 14:55",
-  "L3_RECEIVED": "",
+  "L3_RECEIVED": "2026-10-08",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-10-14 13:16",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -5941,8 +5941,8 @@
   "PCSO_NO": "PUNGRAINK010926NAF001",
   "QTY": "96",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 2",
-  "_modified": "2026-10-13 14:55:30.130385"
+  "STATUS": "Approved By Level 3",
+  "_modified": "2026-10-14 13:16:00.588213"
  },
  "PUNGRAINK010926NAF001/BILL03": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -7022,10 +7022,10 @@
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
   "L1_VERIFIED": "2026-10-13 17:01",
-  "L2_RECEIVED": "",
+  "L2_RECEIVED": "2026-10-12",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-14 10:43",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -7048,8 +7048,8 @@
   "PCSO_NO": "TGSCSCLK130926NAF001",
   "QTY": "400",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-13 17:01:36.290126"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-14 10:43:12.285410"
  },
  "TGSCSCLK140826NAF001/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
