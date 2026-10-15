@@ -1446,10 +1446,10 @@
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
   "L1_VERIFIED": "2026-10-14 17:16",
-  "L2_RECEIVED": "",
+  "L2_RECEIVED": "2026-10-14",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-15 11:52",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -1472,8 +1472,8 @@
   "PCSO_NO": "PUNGRAINK010926KAL001",
   "QTY": "96",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-14 17:16:51.381926"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-15 11:52:40.027420"
  },
  "PUNGRAINK010926KAL002/BILL01": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
