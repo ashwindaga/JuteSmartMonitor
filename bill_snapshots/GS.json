@@ -2926,10 +2926,10 @@
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-13 16:56",
-  "L3_RECEIVED": "",
+  "L3_RECEIVED": "2026-10-13",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-10-15 11:27",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -2948,8 +2948,8 @@
   "PCSO_NO": "TGSCSCLK130926SHR001",
   "QTY": "300",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 2",
-  "_modified": "2026-10-13 16:56:37.578788"
+  "STATUS": "Approved By Level 3",
+  "_modified": "2026-10-15 11:27:02.177991"
  },
  "TGSCSCLK140826SHR001/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
