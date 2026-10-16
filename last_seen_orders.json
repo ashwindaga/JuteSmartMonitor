@@ -8391,10 +8391,10 @@
     "total_pcso_quantity": 700,
     "total_icall_quantity_in_bales": 400,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 0,
+    "inspected_qty": 400,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 700,
-    "total_delivered_quantity": 0,
+    "total_pcso_remaining_quantiy": 300,
+    "total_delivered_quantity": 400,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -8420,7 +8420,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "TGSCSCLK051026KAN001",
-    "modified": "2026-10-15 17:55:53.074038",
+    "modified": "2026-10-16 18:40:18.509207",
     "creation": "2026-10-05 22:41:18.558477"
   },
   "KCL::UPFCSK051026KAN001": {
@@ -9256,7 +9256,7 @@
     "creation": "2026-10-05 21:56:27.223780"
   },
   "KCL::CGMRKFDK051026KAN003": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-10-05",
     "pcso_month": "October-2026",
     "crop_year": "KMS-2026-27",
@@ -9275,10 +9275,10 @@
     "total_pcso_quantity": 130,
     "total_icall_quantity_in_bales": 130,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 0,
+    "inspected_qty": 130,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 130,
-    "total_delivered_quantity": 0,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 130,
     "total_rejected_quantity": 130,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -9304,7 +9304,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "CGMRKFDK051026KAN003",
-    "modified": "2026-10-15 19:27:23.780112",
+    "modified": "2026-10-16 19:48:27.419327",
     "creation": "2026-10-08 16:38:26.618568"
   },
   "Tepcon::PUNGRAINK010926SHR003": {
