@@ -25,9 +25,9 @@
     "total_delivered_quantity": 1968,
     "total_rejected_quantity": 240,
     "total_withdraw_qty": 48,
-    "total_qty_dispatch_by_mill": 1776,
+    "total_qty_dispatch_by_mill": 1872,
     "total_qty_received_by_consignee": 0,
-    "total_billed_qty_in_bales": 1776,
+    "total_billed_qty_in_bales": 1872,
     "lot_size": 48,
     "last_date_of_inspection": "2026-10-31",
     "last_date_of_despatch": "2026-10-31",
@@ -36,7 +36,7 @@
     "tax_amendment_date": null,
     "submission_time": "2026-08-01 08:50:39.908294",
     "exfactory_price": 10800.76,
-    "total_billed_amount_in_rs": 104772806.0,
+    "total_billed_amount_in_rs": 110436192.0,
     "total_paid_amount_in_rs": 0.0,
     "jci_linkage": "JC-LC-April-2026-36051",
     "jci_linkage_percentage": "0",
@@ -48,7 +48,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "MPSCSCK010826KAN001",
-    "modified": "2026-10-05 19:28:27.901799",
+    "modified": "2026-10-16 16:40:13.368828",
     "creation": "2026-08-01 08:50:39.909510"
   },
   "KCL::CGMRKFDK140826KAN001": {
@@ -7305,7 +7305,7 @@
     "total_delivered_quantity": 1400,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 100,
-    "total_qty_dispatch_by_mill": 300,
+    "total_qty_dispatch_by_mill": 390,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 100,
@@ -7328,7 +7328,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK130926KAN001",
-    "modified": "2026-10-15 18:05:07.291577",
+    "modified": "2026-10-16 15:21:15.561113",
     "creation": "2026-09-13 16:06:31.310525"
   },
   "KCL::CGMRKFDK130926KAN001": {
@@ -7461,7 +7461,7 @@
     "total_delivered_quantity": 1000,
     "total_rejected_quantity": 300,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 800,
+    "total_qty_dispatch_by_mill": 1000,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 800,
     "lot_size": 100,
@@ -7484,7 +7484,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "TGSCSCLK130926NAF001",
-    "modified": "2026-10-13 15:25:50.465578",
+    "modified": "2026-10-16 17:05:10.203969",
     "creation": "2026-09-13 16:08:39.966208"
   },
   "KJPL::CGMRKFDK130926NAF001": {
@@ -7617,7 +7617,7 @@
     "total_delivered_quantity": 900,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 800,
+    "total_qty_dispatch_by_mill": 900,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 800,
     "lot_size": 100,
@@ -7640,7 +7640,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK130926SHR002",
-    "modified": "2026-10-13 18:14:22.804187",
+    "modified": "2026-10-16 13:36:46.242602",
     "creation": "2026-09-13 16:09:11.597755"
   },
   "Tepcon::CGMRKFDK130926SHR001": {
@@ -7929,7 +7929,7 @@
     "total_delivered_quantity": 480,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 240,
-    "total_qty_dispatch_by_mill": 240,
+    "total_qty_dispatch_by_mill": 480,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 240,
     "lot_size": 48,
@@ -7952,7 +7952,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010926KAL002",
-    "modified": "2026-10-13 12:55:52.258918",
+    "modified": "2026-10-16 15:48:41.691798",
     "creation": "2026-09-15 14:52:07.332775"
   },
   "KCL::PUNGRAINK010926KAN002": {
@@ -7993,7 +7993,7 @@
     "submission_time": "2026-09-17 08:30:27.185527",
     "exfactory_price": 10433.21,
     "total_billed_amount_in_rs": 16139048.0,
-    "total_paid_amount_in_rs": 0.0,
+    "total_paid_amount_in_rs": 7299337.0,
     "jci_linkage": "JC-LC-September-2026-173461",
     "jci_linkage_percentage": "0",
     "pcso_allocation": null,
@@ -8441,7 +8441,7 @@
     "month": "September-2026",
     "total_qty": 650,
     "total_pcso_quantity": 520,
-    "total_icall_quantity_in_bales": 0,
+    "total_icall_quantity_in_bales": 390,
     "total_reallocated_qty_in_bales": 130,
     "inspected_qty": 0,
     "rem_insp_qty": 0,
@@ -8472,7 +8472,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "UPFCSK051026KAN001",
-    "modified": "2026-10-09 16:37:20.415510",
+    "modified": "2026-10-16 18:14:12.373805",
     "creation": "2026-10-05 22:33:14.082432"
   },
   "KCL::CGMRKFDK051026KAN002": {
@@ -8597,7 +8597,7 @@
     "month": "August-2026",
     "total_qty": 1008,
     "total_pcso_quantity": 1008,
-    "total_icall_quantity_in_bales": 0,
+    "total_icall_quantity_in_bales": 240,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 0,
     "rem_insp_qty": 0,
@@ -8628,7 +8628,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "BRFCSK051026KAN001",
-    "modified": "2026-10-05 21:56:14.570117",
+    "modified": "2026-10-16 18:13:25.130185",
     "creation": "2026-10-05 21:56:14.264496"
   },
   "KJPL::APSCSCLK051026NAF001": {
@@ -8684,7 +8684,7 @@
     "creation": "2026-10-05 23:29:43.718669"
   },
   "KJPL::TGSCSCLK051026NAF001": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-10-05",
     "pcso_month": "October-2026",
     "crop_year": "KMS-2026-27",
@@ -8703,10 +8703,10 @@
     "total_pcso_quantity": 500,
     "total_icall_quantity_in_bales": 500,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 300,
+    "inspected_qty": 500,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 200,
-    "total_delivered_quantity": 300,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 500,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -8732,7 +8732,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "TGSCSCLK051026NAF001",
-    "modified": "2026-10-15 15:24:19.859625",
+    "modified": "2026-10-16 17:59:50.717462",
     "creation": "2026-10-05 22:41:23.213107"
   },
   "KJPL::UPFCSK051026NAF001": {
@@ -9013,7 +9013,7 @@
     "month": "September-2026",
     "total_qty": 650,
     "total_pcso_quantity": 650,
-    "total_icall_quantity_in_bales": 390,
+    "total_icall_quantity_in_bales": 650,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 390,
     "rem_insp_qty": 0,
@@ -9044,11 +9044,11 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "UPFCSK051026SHR001",
-    "modified": "2026-10-09 16:37:18.915645",
+    "modified": "2026-10-16 15:02:03.570877",
     "creation": "2026-10-05 22:33:10.693212"
   },
   "Tepcon::CGMRKFDK051026SHR001": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-10-05",
     "pcso_month": "October-2026",
     "crop_year": "KMS-2026-27",
@@ -9067,10 +9067,10 @@
     "total_pcso_quantity": 650,
     "total_icall_quantity_in_bales": 650,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 520,
+    "inspected_qty": 650,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 130,
-    "total_delivered_quantity": 520,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 650,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -9096,7 +9096,7 @@
     "transport_mode": "RAIL",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "CGMRKFDK051026SHR001",
-    "modified": "2026-10-15 17:09:37.539048",
+    "modified": "2026-10-16 17:22:16.920754",
     "creation": "2026-10-05 22:24:01.321582"
   },
   "Tepcon::HRFCSK051026SHR001": {
@@ -11509,7 +11509,7 @@
     "month": "September-2026",
     "total_qty": 432,
     "total_pcso_quantity": 432,
-    "total_icall_quantity_in_bales": 0,
+    "total_icall_quantity_in_bales": 240,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 0,
     "rem_insp_qty": 0,
@@ -11540,7 +11540,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "MPSCSCK141026NAF001",
-    "modified": "2026-10-14 10:04:11.297932",
+    "modified": "2026-10-16 15:51:10.598255",
     "creation": "2026-10-14 10:04:10.924464"
   },
   "Tepcon::MPSCSCK141026SHR001": {
