@@ -11492,7 +11492,7 @@
     "creation": "2026-10-14 10:04:11.344826"
   },
   "KJPL::MPSCSCK141026NAF001": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-10-14",
     "pcso_month": "October-2026",
     "crop_year": "KMS-2026-27",
@@ -11511,10 +11511,10 @@
     "total_pcso_quantity": 432,
     "total_icall_quantity_in_bales": 432,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 192,
+    "inspected_qty": 432,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 240,
-    "total_delivered_quantity": 192,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 432,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 48,
     "total_qty_dispatch_by_mill": 0,
@@ -11540,7 +11540,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "COTECNA INSPECTION INDIA PVT LTD",
     "name": "MPSCSCK141026NAF001",
-    "modified": "2026-10-17 18:50:53.263480",
+    "modified": "2026-10-18 16:24:43.419408",
     "creation": "2026-10-14 10:04:10.924464"
   },
   "Tepcon::MPSCSCK141026SHR001": {
