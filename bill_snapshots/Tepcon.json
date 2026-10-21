@@ -5419,10 +5419,10 @@
   "DOCKET_DATE": "2026-10-14",
   "DOCKET_NO": "14-10-26/0024",
   "INOTE": "TGSCSCLK130926SHR002-0003-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-14",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-21 13:12",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -5449,8 +5449,8 @@
   "PCSO_NO": "TGSCSCLK130926SHR002",
   "QTY": "200",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-14 16:32:42.485157"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-21 13:12:35.682162"
  },
  "TGSCSCLK140826SHR002/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",

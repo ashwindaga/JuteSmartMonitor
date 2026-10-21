@@ -1893,10 +1893,10 @@
   "DOCKET_DATE": "2026-10-15",
   "DOCKET_NO": "15-10-26/0021",
   "INOTE": "PUNGRAINK010926KAN001-0001-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-15",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-21 13:02",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -1923,8 +1923,8 @@
   "PCSO_NO": "PUNGRAINK010926KAN001",
   "QTY": "144",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-15 17:46:38.673555"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-21 13:02:26.964988"
  },
  "PUNGRAINK010926KAN002/BILL01": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
