@@ -294,10 +294,10 @@
   "DOCKET_DATE": "2026-10-14",
   "DOCKET_NO": "14-10-26/0008",
   "INOTE": "CGMRKFDK130926SHR002-0002-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-14",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-21 16:03",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -324,8 +324,8 @@
   "PCSO_NO": "CGMRKFDK130926SHR002",
   "QTY": "260",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-14 13:47:40.805418"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-21 16:03:41.165091"
  },
  "CGMRKFDK180626SHR002/BILL01": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
