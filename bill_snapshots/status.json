@@ -1,5 +1,5 @@
 {
- "last_checked": "2026-10-21T18:34:41+00:00",
+ "last_checked": "2026-10-22T08:30:41+00:00",
  "mills": {
   "GS": {
    "bills": 108,
@@ -19,11 +19,11 @@
   },
   "KJPL": {
    "bills": 218,
-   "error": "Portal did not respond (connection timed out)",
+   "error": null,
    "file": "KJPL",
    "last_changed": "2026-10-14T18:31:50+00:00",
-   "last_success": "2026-10-21T14:05:20+00:00",
-   "ok": false
+   "last_success": "2026-10-22T08:30:41+00:00",
+   "ok": true
   },
   "Kaliaganj": {
    "bills": 62,
