@@ -7059,10 +7059,10 @@
   "DOCKET_DATE": "2026-10-14",
   "DOCKET_NO": "14-10-26/0027",
   "INOTE": "TGSCSCLK130926NAF001-0003-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-14",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-23 15:01",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -7089,8 +7089,8 @@
   "PCSO_NO": "TGSCSCLK130926NAF001",
   "QTY": "400",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-14 17:35:19.606475"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-23 15:01:48.756923"
  },
  "TGSCSCLK140826NAF001/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
