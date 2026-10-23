@@ -540,14 +540,14 @@
   "DOCKET_DATE": "2026-10-12",
   "DOCKET_NO": "12-10-26/0079",
   "INOTE": "CGMRKFDK130926SHR001-0002-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-12",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
-  "L2_RECEIVED": "",
+  "L1_VERIFIED": "2026-10-23 12:15",
+  "L2_RECEIVED": "2026-10-12",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-23 13:11",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -570,8 +570,8 @@
   "PCSO_NO": "CGMRKFDK130926SHR001",
   "QTY": "390",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-12 19:25:45.589303"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-23 13:11:51.737245"
  },
  "CGMRKFDK130926SHR001/BILL02": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -5457,8 +5457,8 @@
   "BILL": "TGSCSCLK130926SHR002/BILL04",
   "BILL_DATE": "2026-10-22",
   "CUSTOMER": "Telangana",
-  "DOCKET_DATE": "",
-  "DOCKET_NO": "",
+  "DOCKET_DATE": "2026-10-23",
+  "DOCKET_NO": "23-10-26/0053",
   "INOTE": "TGSCSCLK130926SHR002-0004-0001",
   "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
@@ -5490,8 +5490,8 @@
   "PCSO_NO": "TGSCSCLK130926SHR002",
   "QTY": "100",
   "REJ_REASON": "",
-  "STATUS": "",
-  "_modified": "2026-10-22 18:18:47.409062"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-23 11:38:58.356910"
  },
  "TGSCSCLK140826SHR002/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",

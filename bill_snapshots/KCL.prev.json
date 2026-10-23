@@ -1391,7 +1391,7 @@
   "QTY": "240",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 1",
-  "_modified": "2026-10-16 14:47:17.324968"
+  "_modified": "2026-10-22 13:16:22.526270"
  },
  "PSWCK010826KAN001/BILL01": {
   "AGENCY": "Punjab State Warehousing Corporation",
@@ -1942,10 +1942,10 @@
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-21 15:57",
-  "L3_RECEIVED": "",
+  "L3_RECEIVED": "2026-10-14",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-10-22 13:25",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -1964,8 +1964,8 @@
   "PCSO_NO": "PUNGRAINK010926KAN002",
   "QTY": "144",
   "REJ_REASON": "",
-  "STATUS": "Approved By Level 2",
-  "_modified": "2026-10-21 15:57:34.159697"
+  "STATUS": "Approved By Level 3",
+  "_modified": "2026-10-22 13:25:39.786320"
  },
  "PUNGRAINK010926KAN002/BILL02": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
