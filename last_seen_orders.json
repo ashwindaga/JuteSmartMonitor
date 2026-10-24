@@ -233,7 +233,7 @@
     "total_delivered_quantity": 1400,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 0,
+    "total_qty_dispatch_by_mill": 400,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 100,
@@ -256,7 +256,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "TGSCSCLK140826KAN001",
-    "modified": "2026-10-10 17:23:07.303532",
+    "modified": "2026-10-24 12:16:29.706347",
     "creation": "2026-08-14 12:20:42.722382"
   },
   "KCL::HAFEDK140826KAN001": {
@@ -8191,7 +8191,7 @@
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 384,
     "total_qty_received_by_consignee": 0,
-    "total_billed_qty_in_bales": 288,
+    "total_billed_qty_in_bales": 384,
     "lot_size": 48,
     "last_date_of_inspection": "2026-10-31",
     "last_date_of_despatch": "2026-10-31",
@@ -8200,7 +8200,7 @@
     "tax_amendment_date": null,
     "submission_time": "2026-09-23 20:41:46.499459",
     "exfactory_price": 10433.21,
-    "total_billed_amount_in_rs": 16169230.0,
+    "total_billed_amount_in_rs": 21587372.0,
     "total_paid_amount_in_rs": 0.0,
     "jci_linkage": "JC-LC-September-2026-173461",
     "jci_linkage_percentage": "0",
@@ -9437,7 +9437,7 @@
     "total_delivered_quantity": 96,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
-    "total_qty_dispatch_by_mill": 0,
+    "total_qty_dispatch_by_mill": 96,
     "total_qty_received_by_consignee": 0,
     "total_billed_qty_in_bales": 0,
     "lot_size": 48,
@@ -9460,7 +9460,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "BRFCSK091026SHR001",
-    "modified": "2026-10-20 17:32:45.077665",
+    "modified": "2026-10-24 11:22:10.700444",
     "creation": "2026-10-09 08:39:34.074472"
   },
   "GS::ODSCSCK220426SHR002": {
@@ -9793,7 +9793,7 @@
     "month": "September-2026",
     "total_qty": 500,
     "total_pcso_quantity": 500,
-    "total_icall_quantity_in_bales": 200,
+    "total_icall_quantity_in_bales": 500,
     "total_reallocated_qty_in_bales": 0,
     "inspected_qty": 200,
     "rem_insp_qty": 0,
@@ -9824,7 +9824,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "TGSCSCLK051026SHR001",
-    "modified": "2026-10-23 18:00:10.472432",
+    "modified": "2026-10-24 12:42:39.286858",
     "creation": "2026-10-05 22:41:21.470760"
   },
   "GS::CGMRKFDK051026SHR002": {
