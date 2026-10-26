@@ -745,10 +745,10 @@
   "DOCKET_DATE": "2026-10-23",
   "DOCKET_NO": "23-10-26/0057",
   "INOTE": "MPSCSCK010826KAN001-0008-0001",
-  "L1_RECEIVED": "",
-  "L1_REJ_REASON": "",
+  "L1_RECEIVED": "2026-10-23",
+  "L1_REJ_REASON": "attach the bill of remaining 96 bills against iwb no SPGJ260992",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-26 13:28",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -775,8 +775,8 @@
   "PCSO_NO": "MPSCSCK010826KAN001",
   "QTY": "96",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-23 11:49:54.698781"
+  "STATUS": "L1 Rejected - L2 Pending",
+  "_modified": "2026-10-26 13:28:44.603776"
  },
  "MPSCSCK130926KAN001/BILL01": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -2221,10 +2221,10 @@
   "DOCKET_DATE": "2026-10-23",
   "DOCKET_NO": "23-10-26/0064",
   "INOTE": "TGSCSCLK130926KAN001-0002-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-23",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-26 13:31",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -2251,7 +2251,7 @@
   "PCSO_NO": "TGSCSCLK130926KAN001",
   "QTY": "300",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-23 12:10:26.230447"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-26 13:31:23.050646"
  }
 }

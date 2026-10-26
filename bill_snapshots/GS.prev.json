@@ -168,8 +168,8 @@
   "BILL": "BRFCSK091026SHR001/BILL01",
   "BILL_DATE": "2026-10-24",
   "CUSTOMER": "Bihar",
-  "DOCKET_DATE": "",
-  "DOCKET_NO": "",
+  "DOCKET_DATE": "2026-10-24",
+  "DOCKET_NO": "24-10-26/0041",
   "INOTE": "BRFCSK091026SHR001-0001-0001",
   "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
@@ -201,16 +201,16 @@
   "PCSO_NO": "BRFCSK091026SHR001",
   "QTY": "48",
   "REJ_REASON": "",
-  "STATUS": "",
-  "_modified": "2026-10-24 12:17:03.986891"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-24 13:47:27.288503"
  },
  "BRFCSK091026SHR001/BILL02": {
   "AGENCY": "Bihar State Food & Civil Supplies Corporation Limited",
   "BILL": "BRFCSK091026SHR001/BILL02",
   "BILL_DATE": "2026-10-24",
   "CUSTOMER": "Bihar",
-  "DOCKET_DATE": "",
-  "DOCKET_NO": "",
+  "DOCKET_DATE": "2026-10-24",
+  "DOCKET_NO": "24-10-26/0042",
   "INOTE": "BRFCSK091026SHR001-0001-0002",
   "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
@@ -242,8 +242,8 @@
   "PCSO_NO": "BRFCSK091026SHR001",
   "QTY": "48",
   "REJ_REASON": "",
-  "STATUS": "",
-  "_modified": "2026-10-24 12:23:00.201010"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-24 13:52:19.087926"
  },
  "BRFCSR220526SHR002/BILL01": {
   "AGENCY": "Bihar State Food & Civil Supplies Corporation Limited",
@@ -4227,8 +4227,8 @@
   "BILL": "UPFCSK051026SHR002/BILL01",
   "BILL_DATE": "2026-10-23",
   "CUSTOMER": "Uttar Pradesh",
-  "DOCKET_DATE": "",
-  "DOCKET_NO": "",
+  "DOCKET_DATE": "2026-10-24",
+  "DOCKET_NO": "24-10-26/0037",
   "INOTE": "UPFCSK051026SHR002-0001-0001",
   "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
@@ -4260,8 +4260,8 @@
   "PCSO_NO": "UPFCSK051026SHR002",
   "QTY": "130",
   "REJ_REASON": "",
-  "STATUS": "",
-  "_modified": "2026-10-24 12:58:31.240434"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-24 13:37:47.490810"
  },
  "UPFCSK051026SHR002/BILL02": {
   "AGENCY": "Food & Civil Supplies Department Uttar Pradesh",
@@ -4309,8 +4309,8 @@
   "BILL": "UPFCSK051026SHR002/BILL03",
   "BILL_DATE": "2026-10-23",
   "CUSTOMER": "Uttar Pradesh",
-  "DOCKET_DATE": "",
-  "DOCKET_NO": "",
+  "DOCKET_DATE": "2026-10-24",
+  "DOCKET_NO": "24-10-26/0039",
   "INOTE": "UPFCSK051026SHR002-0003-0001",
   "L1_RECEIVED": "",
   "L1_REJ_REASON": "",
@@ -4342,8 +4342,8 @@
   "PCSO_NO": "UPFCSK051026SHR002",
   "QTY": "130",
   "REJ_REASON": "",
-  "STATUS": "",
-  "_modified": "2026-10-23 17:33:08.843363"
+  "STATUS": "Bill Generated",
+  "_modified": "2026-10-24 13:42:52.356933"
  },
  "UPUPFCS190126SHRGSJML001/BILL01": {
   "AGENCY": "Food & Civil Supplies Department Uttar Pradesh",
