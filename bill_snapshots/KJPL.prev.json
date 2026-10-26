@@ -1216,18 +1216,18 @@
   "P1_STATUS": "",
   "P1_UTR": "PUNBR52026082111402856",
   "P2_AMT": "4951857",
-  "P2_DATE": "",
+  "P2_DATE": "2026-10-23",
   "P2_HOLD": "Cleared",
-  "P2_PAID": "0",
+  "P2_PAID": "4951857",
   "P2_PCT": "10",
   "P2_STATUS": "",
-  "P2_UTR": "",
+  "P2_UTR": "PUNBR52026102314090447",
   "PCSO_MONTH": "July-2026",
   "PCSO_NO": "CGMRKFDK240726NAF001",
   "QTY": "768",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-08-21 19:13:23.287892"
+  "_modified": "2026-10-23 22:46:12.047559"
  },
  "CGMRKFDK240726NAF001/BILL02": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -1257,18 +1257,18 @@
   "P1_STATUS": "",
   "P1_UTR": "PUNBR52026082211421740",
   "P2_AMT": "928473",
-  "P2_DATE": "",
+  "P2_DATE": "2026-10-23",
   "P2_HOLD": "Cleared",
-  "P2_PAID": "0",
+  "P2_PAID": "928473",
   "P2_PCT": "10",
   "P2_STATUS": "",
-  "P2_UTR": "",
+  "P2_UTR": "PUNBR52026102314090465",
   "PCSO_MONTH": "July-2026",
   "PCSO_NO": "CGMRKFDK240726NAF001",
   "QTY": "144",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-08-24 00:01:27.075498"
+  "_modified": "2026-10-23 22:46:16.516202"
  },
  "HAFEDK140826NAF001/BILL01": {
   "AGENCY": "The Haryana State Cooperative Supply & Marketing Federation Ltd.",
@@ -4015,7 +4015,7 @@
   "QTY": "96",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-29 15:56:50.677354"
+  "_modified": "2026-10-23 19:48:19.540803"
  },
  "PBMRKFDK240726NAF001/BILL06": {
   "AGENCY": "THE PUNJAB STATE CO-OPERATIVE SUPPLY & MARKETING FEDERATION LTD.",
@@ -7694,18 +7694,18 @@
   "P1_STATUS": "",
   "P1_UTR": "PUNBR52026082411488315",
   "P2_AMT": "1627614",
-  "P2_DATE": "",
+  "P2_DATE": "2026-10-23",
   "P2_HOLD": "Cleared",
-  "P2_PAID": "0",
+  "P2_PAID": "1627614",
   "P2_PCT": "10",
   "P2_STATUS": "",
-  "P2_UTR": "",
+  "P2_UTR": "PUNBR52026102314090540",
   "PCSO_MONTH": "July-2026",
   "PCSO_NO": "TGSCSCLK240726NAF001",
   "QTY": "300",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-08-24 19:04:44.715080"
+  "_modified": "2026-10-23 22:45:54.496999"
  },
  "TGSCSCLK240726NAF001/BILL02": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
