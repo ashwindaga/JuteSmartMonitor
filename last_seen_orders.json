@@ -7904,7 +7904,7 @@
     "creation": "2026-09-14 14:55:38.947742"
   },
   "Kaliaganj::PUNGRAINK010926KAL002": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-09-01",
     "pcso_month": "September-2026",
     "crop_year": "KMS-2026-27",
@@ -7923,10 +7923,10 @@
     "total_pcso_quantity": 768,
     "total_icall_quantity_in_bales": 768,
     "total_reallocated_qty_in_bales": 144,
-    "inspected_qty": 720,
+    "inspected_qty": 768,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 48,
-    "total_delivered_quantity": 720,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 768,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 240,
     "total_qty_dispatch_by_mill": 480,
@@ -7952,7 +7952,7 @@
     "transport_mode": "CONCOR",
     "inspection_agency": "Indian Jute Industries' Research Association",
     "name": "PUNGRAINK010926KAL002",
-    "modified": "2026-10-24 20:25:03.897018",
+    "modified": "2026-10-26 23:34:16.667613",
     "creation": "2026-09-15 14:52:07.332775"
   },
   "KCL::PUNGRAINK010926KAN002": {
