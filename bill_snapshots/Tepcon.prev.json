@@ -847,18 +847,18 @@
   "P1_STATUS": "",
   "P1_UTR": "PUNBR52026082711641030",
   "P2_AMT": "1237964",
-  "P2_DATE": "",
+  "P2_DATE": "2026-10-26",
   "P2_HOLD": "Cleared",
-  "P2_PAID": "0",
+  "P2_PAID": "1237964",
   "P2_PCT": "10",
   "P2_STATUS": "",
-  "P2_UTR": "",
+  "P2_UTR": "PUNBR52026102614168230",
   "PCSO_MONTH": "July-2026",
   "PCSO_NO": "CGMRKFDK240726SHR001",
   "QTY": "192",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-08-27 19:34:26.295543"
+  "_modified": "2026-10-26 19:12:14.581126"
  },
  "CGMRKFDK240726SHR001/BILL02": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",

@@ -171,10 +171,10 @@
   "DOCKET_DATE": "2026-10-24",
   "DOCKET_NO": "24-10-26/0041",
   "INOTE": "BRFCSK091026SHR001-0001-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-24",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-27 13:04",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -201,8 +201,8 @@
   "PCSO_NO": "BRFCSK091026SHR001",
   "QTY": "48",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-24 13:47:27.288503"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-27 13:04:00.464741"
  },
  "BRFCSK091026SHR001/BILL02": {
   "AGENCY": "Bihar State Food & Civil Supplies Corporation Limited",
@@ -917,10 +917,10 @@
   "L2_REJ_REASON": "objection raised by level 1 is sufficient for rejecting the bill.",
   "L2_REMARKS": "",
   "L2_VERIFIED": "2026-10-26 17:25",
-  "L3_RECEIVED": "",
-  "L3_REJ_REASON": "",
+  "L3_RECEIVED": "2026-10-23",
+  "L3_REJ_REASON": "objection raised by level 1 is sufficient for rejecting the bill.",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-10-27 12:12",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -939,8 +939,8 @@
   "PCSO_NO": "HSWCK230926SHR001",
   "QTY": "192",
   "REJ_REASON": "",
-  "STATUS": "L2 Rejected - L3 Pending",
-  "_modified": "2026-10-26 17:25:57.347083"
+  "STATUS": "Rejected By Level 3",
+  "_modified": "2026-10-27 12:12:43.216615"
  },
  "MPSCSCK010826SHR005/BILL01": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -4189,10 +4189,10 @@
   "DOCKET_DATE": "2026-10-23",
   "DOCKET_NO": "23-10-26/0097",
   "INOTE": "TNCSCK130926SHR001-0001-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-23",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-27 12:56",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -4219,8 +4219,8 @@
   "PCSO_NO": "TNCSCK130926SHR001",
   "QTY": "260",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-23 12:57:59.243778"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-27 12:56:49.591442"
  },
  "UPFCSK051026SHR002/BILL01": {
   "AGENCY": "Food & Civil Supplies Department Uttar Pradesh",
