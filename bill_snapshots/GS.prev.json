@@ -184,12 +184,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-27 16:58",
   "P1_AMT": "2454282",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-27",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "2454282",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102714241301",
   "P2_AMT": "253752",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -202,7 +202,7 @@
   "QTY": "48",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-27 19:01:40.560838"
+  "_modified": "2026-10-27 23:12:15.399614"
  },
  "BRFCSK091026SHR001/BILL02": {
   "AGENCY": "Bihar State Food & Civil Supplies Corporation Limited",
@@ -881,12 +881,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-27 18:18",
   "P1_AMT": "14741742",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-28",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "14741742",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "HDFCR52026102877764915",
   "P2_AMT": "1512684",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -899,7 +899,7 @@
   "QTY": "288",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-27 19:01:47.758512"
+  "_modified": "2026-10-28 01:37:05.975060"
  },
  "HSWCK230926SHR001/BILL02": {
   "AGENCY": "Haryana State Warehousing Corporation",
@@ -3143,18 +3143,18 @@
   "P1_STATUS": "",
   "P1_UTR": "PUNBR52026082811665314",
   "P2_AMT": "1085076",
-  "P2_DATE": "",
+  "P2_DATE": "2026-10-27",
   "P2_HOLD": "Cleared",
-  "P2_PAID": "0",
+  "P2_PAID": "1085076",
   "P2_PCT": "10",
   "P2_STATUS": "",
-  "P2_UTR": "",
+  "P2_UTR": "PUNBR52026102714241434",
   "PCSO_MONTH": "August-2026",
   "PCSO_NO": "TGSCSCLK140826SHR001",
   "QTY": "200",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-27 18:33:59.563261"
+  "_modified": "2026-10-27 23:12:09.206020"
  },
  "TGSCSCLK140826SHR001/BILL02": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
@@ -4202,12 +4202,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-27 16:33",
   "P1_AMT": "13169248",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-27",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "13169248",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102714241397",
   "P2_AMT": "1365438",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -4220,7 +4220,7 @@
   "QTY": "260",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-27 19:01:53.641748"
+  "_modified": "2026-10-27 23:12:29.543804"
  },
  "UPFCSK051026SHR002/BILL01": {
   "AGENCY": "Food & Civil Supplies Department Uttar Pradesh",
