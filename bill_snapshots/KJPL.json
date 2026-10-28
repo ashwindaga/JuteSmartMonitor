@@ -581,14 +581,14 @@
   "DOCKET_DATE": "2026-10-26",
   "DOCKET_NO": "26-10-26/0075",
   "INOTE": "CGMRKFDK051026NAF001-0002-0002",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-26",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
-  "L2_RECEIVED": "",
+  "L1_VERIFIED": "2026-10-28 16:16",
+  "L2_RECEIVED": "2026-10-26",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
+  "L2_VERIFIED": "2026-10-28 16:57",
   "L3_RECEIVED": "",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
@@ -611,8 +611,8 @@
   "PCSO_NO": "CGMRKFDK051026NAF001",
   "QTY": "48",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-26 18:20:25.516092"
+  "STATUS": "Approved By Level 2",
+  "_modified": "2026-10-28 16:57:30.839853"
  },
  "CGMRKFDK051026NAF001/BILL03": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -2426,10 +2426,10 @@
   "DOCKET_DATE": "2026-10-26",
   "DOCKET_NO": "26-10-26/0045",
   "INOTE": "MPSCSCK130926NAF001-0004-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-26",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-10-28 17:35",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -2456,8 +2456,8 @@
   "PCSO_NO": "MPSCSCK130926NAF001",
   "QTY": "288",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-26 14:35:39.008177"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-10-28 17:35:33.988389"
  },
  "MPSCSCK130926NAF001/BILL05": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -5204,7 +5204,7 @@
   "QTY": "288",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-29 15:56:51.271392"
+  "_modified": "2026-10-28 15:08:00.846323"
  },
  "PSWCK010826NAF001/BILL02": {
   "AGENCY": "Punjab State Warehousing Corporation",
