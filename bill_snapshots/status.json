@@ -1,45 +1,45 @@
 {
- "last_checked": "2026-10-29T16:52:34+00:00",
+ "last_checked": "2026-10-30T09:53:40+00:00",
  "mills": {
   "GS": {
    "bills": 120,
-   "error": null,
+   "error": "Portal did not respond (connection timed out)",
    "file": "GS",
    "last_changed": "2026-10-29T16:52:34+00:00",
    "last_success": "2026-10-29T16:52:34+00:00",
-   "ok": true
+   "ok": false
   },
   "KCL": {
    "bills": 62,
-   "error": null,
+   "error": "Portal did not respond (connection timed out)",
    "file": "KCL",
    "last_changed": "2026-10-29T16:52:34+00:00",
    "last_success": "2026-10-29T16:52:34+00:00",
-   "ok": true
+   "ok": false
   },
   "KJPL": {
    "bills": 229,
-   "error": null,
+   "error": "Portal did not respond (connection timed out)",
    "file": "KJPL",
    "last_changed": "2026-10-29T16:52:34+00:00",
    "last_success": "2026-10-29T16:52:34+00:00",
-   "ok": true
+   "ok": false
   },
   "Kaliaganj": {
    "bills": 65,
-   "error": null,
+   "error": "Portal did not respond (connection timed out)",
    "file": "Kaliaganj",
    "last_changed": "2026-10-29T09:49:35+00:00",
    "last_success": "2026-10-29T16:52:34+00:00",
-   "ok": true
+   "ok": false
   },
   "Tepcon": {
    "bills": 168,
-   "error": null,
+   "error": "Portal did not respond (connection timed out)",
    "file": "Tepcon",
    "last_changed": "2026-10-29T16:52:34+00:00",
    "last_success": "2026-10-29T16:52:34+00:00",
-   "ok": true
+   "ok": false
   }
  }
 }
