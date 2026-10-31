@@ -11960,7 +11960,7 @@
     "creation": "2026-10-16 23:14:40.545488"
   },
   "Tepcon::APSCSCLK161026SHR002": {
-    "status": "Active",
+    "status": "Completed",
     "pcso_date": "2026-10-16",
     "pcso_month": "October-2026",
     "crop_year": "KMS-2026-27",
@@ -11979,10 +11979,10 @@
     "total_pcso_quantity": 200,
     "total_icall_quantity_in_bales": 200,
     "total_reallocated_qty_in_bales": 0,
-    "inspected_qty": 0,
+    "inspected_qty": 200,
     "rem_insp_qty": 0,
-    "total_pcso_remaining_quantiy": 200,
-    "total_delivered_quantity": 0,
+    "total_pcso_remaining_quantiy": 0,
+    "total_delivered_quantity": 200,
     "total_rejected_quantity": 0,
     "total_withdraw_qty": 0,
     "total_qty_dispatch_by_mill": 0,
@@ -12008,7 +12008,7 @@
     "transport_mode": "ROAD",
     "inspection_agency": "ESKAPS INDIA PVT. LTD.",
     "name": "APSCSCLK161026SHR002",
-    "modified": "2026-10-31 17:54:07.994843",
+    "modified": "2026-10-31 23:03:54.588050",
     "creation": "2026-10-16 23:14:31.931999"
   },
   "Kaliaganj::JHFCSK161026KAL001": {
