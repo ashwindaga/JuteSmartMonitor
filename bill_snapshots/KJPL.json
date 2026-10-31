@@ -594,12 +594,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-29 13:33",
   "P1_AMT": "2432328",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-29",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "2432328",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102914362853",
   "P2_AMT": "253752",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -612,7 +612,7 @@
   "QTY": "48",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-29 19:40:22.768946"
+  "_modified": "2026-10-29 23:33:39.013144"
  },
  "CGMRKFDK051026NAF001/BILL03": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -840,12 +840,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-29 14:01",
   "P1_AMT": "12861851",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-29",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "12861851",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102914362834",
   "P2_AMT": "1365438",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -858,7 +858,7 @@
   "QTY": "260",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-29 19:40:24.814416"
+  "_modified": "2026-10-29 23:33:39.639778"
  },
  "CGMRKFDK130926NAF001/BILL04": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -2480,12 +2480,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-29 15:14",
   "P1_AMT": "14933070",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-29",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "14933070",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "SBINR52026103048317556",
   "P2_AMT": "1512684",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -2498,7 +2498,7 @@
   "QTY": "288",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-29 19:40:29.761694"
+  "_modified": "2026-10-30 19:28:15.283119"
  },
  "MPSCSCK130926NAF001/BILL05": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
