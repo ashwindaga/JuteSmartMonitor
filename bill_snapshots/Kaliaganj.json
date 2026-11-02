@@ -376,10 +376,10 @@
   "DOCKET_DATE": "2026-10-28",
   "DOCKET_NO": "28-10-26/0054",
   "INOTE": "HSWCK230926KAL001-0002-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-28",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-11-02 12:04",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -406,8 +406,8 @@
   "PCSO_NO": "HSWCK230926KAL001",
   "QTY": "240",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-28 17:43:31.374389"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-11-02 12:04:27.844210"
  },
  "MPSCSCK130926KAL001/BILL01": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -571,7 +571,7 @@
   "QTY": "144",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-03 20:46:01.243815"
+  "_modified": "2026-11-02 13:33:04.914083"
  },
  "PBMRKFDK240726KAL002/BILL01": {
   "AGENCY": "THE PUNJAB STATE CO-OPERATIVE SUPPLY & MARKETING FEDERATION LTD.",
@@ -612,7 +612,7 @@
   "QTY": "96",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-03 20:46:01.467103"
+  "_modified": "2026-11-02 13:32:50.899233"
  },
  "PBMRKFDK240726KAL002/BILL02": {
   "AGENCY": "THE PUNJAB STATE CO-OPERATIVE SUPPLY & MARKETING FEDERATION LTD.",
@@ -776,7 +776,7 @@
   "QTY": "48",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-03 20:46:01.747417"
+  "_modified": "2026-11-02 13:32:59.501102"
  },
  "PBMRKFDK240726KAL002/BILL06": {
   "AGENCY": "THE PUNJAB STATE CO-OPERATIVE SUPPLY & MARKETING FEDERATION LTD.",
@@ -817,7 +817,7 @@
   "QTY": "48",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-03 20:46:02.216628"
+  "_modified": "2026-11-02 13:33:07.360106"
  },
  "PBMRKFDK240726KAL002/BILL07": {
   "AGENCY": "THE PUNJAB STATE CO-OPERATIVE SUPPLY & MARKETING FEDERATION LTD.",
@@ -1309,7 +1309,7 @@
   "QTY": "336",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-02 18:17:30.642003"
+  "_modified": "2026-11-02 13:32:40.799074"
  },
  "PUNGRAINK010826KAL001/BILL02": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -1391,7 +1391,7 @@
   "QTY": "288",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-08-31 18:42:18.750648"
+  "_modified": "2026-11-02 13:32:17.093945"
  },
  "PUNGRAINK010826KAL002/BILL02": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
@@ -1432,7 +1432,7 @@
   "QTY": "96",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-08-31 18:42:19.100960"
+  "_modified": "2026-11-02 13:32:04.436743"
  },
  "PUNGRAINK010926KAL001/BILL01": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",

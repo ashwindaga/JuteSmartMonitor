@@ -860,6 +860,47 @@
   "STATUS": "Approved By Level 3",
   "_modified": "2026-10-29 01:37:21.892162"
  },
+ "HRFCSK051026SHR002/BILL01": {
+  "AGENCY": "Food & Supply Department",
+  "BILL": "HRFCSK051026SHR002/BILL01",
+  "BILL_DATE": "2026-11-02",
+  "CUSTOMER": "HARYANA",
+  "DOCKET_DATE": "2026-11-02",
+  "DOCKET_NO": "02-11-26/0072",
+  "INOTE": "HRFCSK051026SHR002-0001-0001",
+  "L1_RECEIVED": "",
+  "L1_REJ_REASON": "",
+  "L1_REMARKS": "",
+  "L1_VERIFIED": "",
+  "L2_RECEIVED": "",
+  "L2_REJ_REASON": "",
+  "L2_REMARKS": "",
+  "L2_VERIFIED": "",
+  "L3_RECEIVED": "",
+  "L3_REJ_REASON": "",
+  "L3_REMARKS": "",
+  "L3_VERIFIED": "",
+  "P1_AMT": "",
+  "P1_DATE": "",
+  "P1_HOLD": "",
+  "P1_PAID": "",
+  "P1_PCT": "",
+  "P1_STATUS": "",
+  "P1_UTR": "",
+  "P2_AMT": "",
+  "P2_DATE": "",
+  "P2_HOLD": "",
+  "P2_PAID": "",
+  "P2_PCT": "",
+  "P2_STATUS": "",
+  "P2_UTR": "",
+  "PCSO_MONTH": "October-2026",
+  "PCSO_NO": "HRFCSK051026SHR002",
+  "QTY": "260",
+  "REJ_REASON": "",
+  "STATUS": "Bill Generated",
+  "_modified": "2026-11-02 14:01:23.830020"
+ },
  "HSWCK230926SHR001/BILL01": {
   "AGENCY": "Haryana State Warehousing Corporation",
   "BILL": "HSWCK230926SHR001/BILL01",
@@ -1022,7 +1063,7 @@
   "QTY": "288",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-08-31 18:42:08.544667"
+  "_modified": "2026-11-02 13:32:16.852143"
  },
  "MPSCSCK010826SHR005/BILL02": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -1104,7 +1145,7 @@
   "QTY": "240",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-03 20:45:47.697619"
+  "_modified": "2026-11-02 13:32:53.908530"
  },
  "MPSCSCK010826SHR005/BILL04": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -1227,7 +1268,7 @@
   "QTY": "192",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-03 20:45:48.038884"
+  "_modified": "2026-11-02 13:33:02.619253"
  },
  "MPSCSCK010826SHR005/BILL07": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -1934,10 +1975,10 @@
   "DOCKET_DATE": "2026-10-29",
   "DOCKET_NO": "29-10-26/0014",
   "INOTE": "ODSCSCK240726SHR001-0001-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-29",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-11-02 11:49",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -1964,8 +2005,8 @@
   "PCSO_NO": "ODSCSCK240726SHR001",
   "QTY": "150",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-29 13:10:24.244970"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-11-02 11:49:54.304735"
  },
  "ODSCSCK240726SHR001/BILL02": {
   "AGENCY": "Odisha State Civil Supplies Corporation Ltd.",
@@ -4056,7 +4097,7 @@
   "QTY": "200",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-08 13:47:18.086613"
+  "_modified": "2026-11-02 13:32:01.852731"
  },
  "TGSCSCLK240726SHR002/BILL02": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",

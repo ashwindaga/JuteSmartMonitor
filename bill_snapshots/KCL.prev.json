@@ -2398,12 +2398,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-29 15:03",
   "P1_AMT": "14608348",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-29",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "14608348",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102914362871",
   "P2_AMT": "1572482",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -2416,7 +2416,7 @@
   "QTY": "300",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-29 19:40:37.155281"
+  "_modified": "2026-10-29 23:33:31.709600"
  },
  "TGSCSCLK130926KAN001/BILL03": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
@@ -2439,12 +2439,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-29 16:24",
   "P1_AMT": "14608350",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-29",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "14608350",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102914362872",
   "P2_AMT": "1572482",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -2457,7 +2457,7 @@
   "QTY": "300",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-29 19:40:37.451667"
+  "_modified": "2026-10-29 23:33:31.896443"
  },
  "TGSCSCLK130926KAN001/BILL04": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
@@ -2480,12 +2480,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-29 16:20",
   "P1_AMT": "9738900",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-29",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "9738900",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102914362873",
   "P2_AMT": "1048321",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -2498,7 +2498,7 @@
   "QTY": "200",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-29 19:40:37.760133"
+  "_modified": "2026-10-29 23:33:32.071856"
  },
  "TGSCSCLK140826KAN001/BILL01": {
   "AGENCY": "Telangana State Civil Supplies Corporation Ltd",
@@ -2521,12 +2521,12 @@
   "L3_REMARKS": "",
   "L3_VERIFIED": "2026-10-29 16:28",
   "P1_AMT": "24347248",
-  "P1_DATE": "",
+  "P1_DATE": "2026-10-29",
   "P1_HOLD": "Cleared",
-  "P1_PAID": "0",
+  "P1_PAID": "24347248",
   "P1_PCT": "90",
   "P1_STATUS": "",
-  "P1_UTR": "",
+  "P1_UTR": "PUNBR52026102914362869",
   "P2_AMT": "2620802",
   "P2_DATE": "",
   "P2_HOLD": "Cleared",
@@ -2539,6 +2539,6 @@
   "QTY": "500",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-10-29 19:40:38.293610"
+  "_modified": "2026-10-29 23:33:32.241291"
  }
 }
