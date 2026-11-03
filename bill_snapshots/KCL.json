@@ -48,18 +48,18 @@
   "DOCKET_DATE": "2026-10-29",
   "DOCKET_NO": "29-10-26/0047",
   "INOTE": "CGMRKFDK051026KAN002-0002-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-29",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
-  "L2_RECEIVED": "",
+  "L1_VERIFIED": "2026-11-03 10:51",
+  "L2_RECEIVED": "2026-10-29",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
-  "L2_VERIFIED": "",
-  "L3_RECEIVED": "",
+  "L2_VERIFIED": "2026-11-03 14:41",
+  "L3_RECEIVED": "2026-10-29",
   "L3_REJ_REASON": "",
   "L3_REMARKS": "",
-  "L3_VERIFIED": "",
+  "L3_VERIFIED": "2026-11-03 15:26",
   "P1_AMT": "",
   "P1_DATE": "",
   "P1_HOLD": "",
@@ -78,8 +78,8 @@
   "PCSO_NO": "CGMRKFDK051026KAN002",
   "QTY": "260",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-29 18:15:53.567513"
+  "STATUS": "Approved By Level 3",
+  "_modified": "2026-11-03 15:26:07.712997"
  },
  "CGMRKFDK130926KAN001/BILL01": {
   "AGENCY": "Chhattisgarh State Cooperative Marketing Federation Limited (MARKFED)",
@@ -540,10 +540,10 @@
   "DOCKET_DATE": "2026-10-28",
   "DOCKET_NO": "28-10-26/0058",
   "INOTE": "HSWCK230926KAN001-0001-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-10-28",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-11-03 10:48",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -570,8 +570,8 @@
   "PCSO_NO": "HSWCK230926KAN001",
   "QTY": "432",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-10-28 18:40:14.441046"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-11-03 10:48:04.394375"
  },
  "HSWCK230926KAN001/BILL02": {
   "AGENCY": "Haryana State Warehousing Corporation",
@@ -581,10 +581,10 @@
   "DOCKET_DATE": "2026-11-02",
   "DOCKET_NO": "02-11-26/0044",
   "INOTE": "HSWCK230926KAN001-0002-0001",
-  "L1_RECEIVED": "",
+  "L1_RECEIVED": "2026-11-02",
   "L1_REJ_REASON": "",
   "L1_REMARKS": "",
-  "L1_VERIFIED": "",
+  "L1_VERIFIED": "2026-11-03 15:11",
   "L2_RECEIVED": "",
   "L2_REJ_REASON": "",
   "L2_REMARKS": "",
@@ -611,8 +611,8 @@
   "PCSO_NO": "HSWCK230926KAN001",
   "QTY": "48",
   "REJ_REASON": "",
-  "STATUS": "Bill Generated",
-  "_modified": "2026-11-02 12:55:48.611416"
+  "STATUS": "Approved By Level 1",
+  "_modified": "2026-11-03 15:11:29.616715"
  },
  "MPSCSCK010826KAN001/BILL01": {
   "AGENCY": "Madhya Pradesh State Civil Supplies Corporation",
@@ -1678,7 +1678,7 @@
   "QTY": "192",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-04 18:02:55.430096"
+  "_modified": "2026-11-03 15:18:00.454839"
  },
  "PSWCK010826KAN001/BILL02": {
   "AGENCY": "Punjab State Warehousing Corporation",
@@ -1924,7 +1924,7 @@
   "QTY": "384",
   "REJ_REASON": "",
   "STATUS": "Approved By Level 3",
-  "_modified": "2026-09-04 18:02:57.722956"
+  "_modified": "2026-11-03 15:18:09.263921"
  },
  "PUNGRAINK010826KAN001/BILL05": {
   "AGENCY": "Punjab State Grains Procurement Corporation Limited",
