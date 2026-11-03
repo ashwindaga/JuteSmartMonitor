@@ -1,45 +1,45 @@
 {
- "last_checked": "2026-11-03T10:43:43+00:00",
+ "last_checked": "2026-11-03T18:22:32+00:00",
  "mills": {
   "GS": {
    "bills": 122,
-   "error": null,
+   "error": "login failed - check this mill's username/password",
    "file": "GS",
    "last_changed": "2026-11-03T10:43:43+00:00",
    "last_success": "2026-11-03T10:43:43+00:00",
-   "ok": true
+   "ok": false
   },
   "KCL": {
    "bills": 65,
-   "error": null,
+   "error": "login failed - check this mill's username/password",
    "file": "KCL",
    "last_changed": "2026-11-03T10:43:43+00:00",
    "last_success": "2026-11-03T10:43:43+00:00",
-   "ok": true
+   "ok": false
   },
   "KJPL": {
    "bills": 234,
-   "error": null,
+   "error": "login failed - check this mill's username/password",
    "file": "KJPL",
    "last_changed": "2026-11-03T10:43:43+00:00",
    "last_success": "2026-11-03T10:43:43+00:00",
-   "ok": true
+   "ok": false
   },
   "Kaliaganj": {
    "bills": 67,
-   "error": null,
+   "error": "login failed - check this mill's username/password",
    "file": "Kaliaganj",
    "last_changed": "2026-11-03T10:43:43+00:00",
    "last_success": "2026-11-03T10:43:43+00:00",
-   "ok": true
+   "ok": false
   },
   "Tepcon": {
    "bills": 172,
-   "error": null,
+   "error": "login failed - check this mill's username/password",
    "file": "Tepcon",
    "last_changed": "2026-11-03T10:43:43+00:00",
    "last_success": "2026-11-03T10:43:43+00:00",
-   "ok": true
+   "ok": false
   }
  }
 }
